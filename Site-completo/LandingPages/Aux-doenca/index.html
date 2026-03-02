@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+
+  <!-- ════ 1. Google tag — GA4 + Google Ads (tag unificada) ════ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17983381794"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // GA4
+    gtag('config', 'G-JRPM8MDM7P', {
+      send_page_view: true,
+      allow_google_signals: true,
+      allow_ad_personalization_signals: true
+    });
+
+    // Google Ads
+    gtag('config', 'AW-17983381794');
+
+    // ── Scroll depth ──
+    var scrollDepths = [25, 50, 75, 90, 100];
+    var scrollFired = {};
+    window.addEventListener('scroll', function() {
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = Math.round((scrollTop / docHeight) * 100);
+      scrollDepths.forEach(function(d) {
+        if (pct >= d && !scrollFired[d]) {
+          scrollFired[d] = true;
+          gtag('event', 'scroll_depth', { depth: d + '%', page: window.location.pathname });
+        }
+      });
+    }, { passive: true });
+
+    // ── Tempo na página ──
+    var timeOnPage = [30, 60, 120, 180];
+    timeOnPage.forEach(function(sec) {
+      setTimeout(function() {
+        gtag('event', 'time_on_page', { seconds: sec, page: window.location.pathname });
+      }, sec * 1000);
+    });
+
+    // ── Exit intent ──
+    document.addEventListener('mouseleave', function(e) {
+      if (e.clientY < 5) {
+        gtag('event', 'exit_intent', { page: window.location.pathname });
+      }
+    });
+  </script>
+
+  <!-- ════ 2. Meta Pixel ════ -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    // Inicializa o pixel com ID correto
+    fbq('init', '1496296691912826');
+
+    // PageView — toda visita ao site
+    fbq('track', 'PageView');
+
+    // ViewContent — registra que o usuário viu a landing page
+    fbq('track', 'ViewContent', {
+      content_name: 'Landing Page — Auxílio-doença INSS',
+      content_category: 'Direito Previdenciário'
+    });
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1496296691912826&ev=PageView&noscript=1"/></noscript>
+
+  <!-- ════ 3. Meta tags essenciais ════ -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Auxílio-doença negado, cortado ou cessado | Advogadas Prev</title>
+  <meta name="description" content="Auxílio-doença negado ou cessado pelo INSS? Advogada em Direito Previdenciário. Recurso ao INSS e ação judicial. Atendimento online no Brasil."" />
+  <link rel="canonical" href="https://advogadasprev.com.br/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://advogadasprev.com.br/" />
+  <meta property="og:title" content="Auxílio-doença negado, cortado ou cessado? | Advogadas Prev" />
+  <meta property="og:description" content="A decisão do INSS pode ser questionada. Orientação jurídica especializada. Atendimento online para todo o Brasil." />
+  <meta property="og:image" content="foto-isabela.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Auxílio-doença negado, cortado ou cessado? | Advogadas Prev" />
+  <meta name="twitter:description" content="A decisão do INSS pode ser questionada. Orientação jurídica especializada. Atendimento online para todo o Brasil." />
+  <meta name="twitter:image" content="foto-isabela.webp" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Advogadas Prev",
+    "description": "Escritório especializado em Direito Previdenciário, com foco em benefícios por incapacidade.",
+    "url": "https://advogadasprev.com.br",
+    "areaServed": {"@type":"Country","name":"Brasil"},
+    "serviceType": "Direito Previdenciário",
+    "priceRange": "Consulta gratuita",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "R. Santa Catarina, 481 - Centro",
+      "addressLocality": "Cascavel",
+      "addressRegion": "PR",
+      "postalCode": "85801-040",
+      "addressCountry": "BR"
+    },
+    "email": "isabelacechet@gmail.com",
+    "employee": {
+      "@type": "Person",
+      "name": "Isabela Wrubel Cechet",
+      "jobTitle": "Advogada — OAB/PR 95.762"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"O que fazer quando o INSS nega o auxílio-doença?","acceptedAnswer":{"@type":"Answer","text":"Você tem 30 dias corridos a partir da notificação para entrar com recurso administrativo pelo Meu INSS, sem custo. Se o prazo passou ou o recurso for negado, ainda é possível questionar pela Justiça. O ideal é analisar a documentação médica e o histórico contributivo antes de decidir o caminho."}},
+      {"@type":"Question","name":"Por que o INSS negou meu benefício?","acceptedAnswer":{"@type":"Answer","text":"Os motivos mais comuns de negativa em 2026 são: laudo médico genérico (sem descrever o impacto da doença na capacidade de trabalhar), CNIS incompleto (falhas no histórico contributivo) e perícia sem tempo suficiente para avaliar doenças crônicas ou psicológicas. Fonte: Portal de Dados Abertos do INSS, 2025–2026."}},
+      {"@type":"Question","name":"Qual o prazo para recorrer após a perícia do INSS?","acceptedAnswer":{"@type":"Answer","text":"O prazo é de 30 dias corridos a partir da data da decisão. O recurso é enviado ao CRPS pelo Meu INSS, sem custo. Se perder esse prazo, pode ser necessário fazer novo pedido ou entrar com ação judicial."}},
+      {"@type":"Question","name":"Cortaram meu benefício no pente-fino. O que fazer?","acceptedAnswer":{"@type":"Answer","text":"De julho a dezembro de 2024, o INSS revisou 684 mil auxílios-doença e cortou 356 mil (52%). Em 2025, mais 802 mil aposentadorias por incapacidade estão na fila de revisão. Você tem 30 dias para recorrer ou entrar com ação judicial com tutela urgente. Fonte: Ministério da Previdência Social, 2024–2025."}},
+      {"@type":"Question","name":"Se ganhar na Justiça, recebo os valores atrasados?","acceptedAnswer":{"@type":"Answer","text":"Sim. Você tem direito a todos os valores retroativos desde a data do primeiro pedido negado, podendo chegar a R$ 15 mil ou mais. Cerca de 70% dos casos contestados judicialmente são revertidos."}},
+      {"@type":"Question","name":"Quanto tempo demora um recurso ou ação judicial?","acceptedAnswer":{"@type":"Answer","text":"O recurso administrativo leva de 3 a 6 meses. A ação judicial pode ser mais rápida com tutela de urgência: o juiz pode determinar o restabelecimento do benefício em dias ou semanas."}},
+      {"@type":"Question","name":"Vale a pena contestar se já fui negado uma vez?","acceptedAnswer":{"@type":"Answer","text":"Sim. Dados do TCU mostram que 27% dos benefícios negados são revertidos na fase administrativa e outros 13% pela Justiça — mais de 40% de reversões no total. Fonte: TCU, Acórdão 2.859/2023."}},
+      {"@type":"Question","name":"Preciso de advogado para recorrer ao INSS?","acceptedAnswer":{"@type":"Answer","text":"O recurso administrativo pode ser feito sem advogado. Mas a orientação jurídica ajuda a identificar o real motivo da negativa. Para ação judicial, a representação é obrigatória."}},
+      {"@type":"Question","name":"Meu laudo médico é bom, mas o INSS negou. Por quê?","acceptedAnswer":{"@type":"Answer","text":"Ter diagnóstico não é suficiente. O INSS avalia se a doença impede você de trabalhar na sua função específica. Laudos sem impacto funcional, sem CID atualizado ou sem correlação com sua profissão são frequentemente desconsiderados."}}
+    ]
+  }
+  </script>
+
+  
+  
+
+  <!-- ════ 4. Schema.org ════ -->
+  
+  
+
+  <!-- ════ 5. Fontes e estilos ════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    :root{
+      --ink:#1A1A2E;--mid:#4A4A5A;--light:#8A8A9A;--line:#E8E8EE;
+      --bg:#F7F8FA;--white:#FFFFFF;--blue:#1B3A6B;--blue-lt:#E8EFF8;
+      --green-wa:#25D366;--green:#128C4E;--max:1080px;
+      --fd:"Playfair Display",Georgia,serif;--fb:"DM Sans",system-ui,sans-serif;
+    }
+    body{font-family:var(--fb);background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+    .a1{animation:fadeUp .65s .00s ease both}
+    .a2{animation:fadeUp .65s .10s ease both}
+    .a3{animation:fadeUp .65s .20s ease both}
+    .a4{animation:fadeUp .65s .30s ease both}
+    .a5{animation:fadeUp .65s .40s ease both}
+    .a6{animation:fadeIn  .8s .45s ease both}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo img{height:44px;width:auto;display:block;object-fit:contain}
+
+    /* Buttons */
+    .btn-wa{display:inline-flex;align-items:center;gap:8px;background:var(--green-wa);color:#fff;font-family:var(--fb);font-size:14px;font-weight:600;padding:10px 20px;border-radius:100px;border:none;cursor:pointer;transition:opacity .2s,transform .15s;white-space:nowrap;line-height:1}
+    .btn-wa:hover{opacity:.9;transform:translateY(-1px)}
+    .btn-wa:active{transform:translateY(0)}
+    .btn-wa-lg{font-size:16px;padding:15px 32px}
+    .btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--green);border:1.5px solid var(--green-wa);font-family:var(--fb);font-size:16px;font-weight:600;padding:15px 32px;border-radius:100px;cursor:pointer;transition:background .2s,transform .15s;white-space:nowrap}
+    .btn-outline:hover{background:#f0fdf4;transform:translateY(-1px)}
+    .wa-icon{width:18px;height:18px;flex-shrink:0}
+
+    /* Mobile sticky */
+    .mobile-sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--line);padding:12px 20px 24px}
+    .mobile-sticky a{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:var(--green-wa);color:#fff;font-family:var(--fb);font-size:16px;font-weight:600;padding:15px 20px;border-radius:100px;text-decoration:none}
+    .mobile-sticky-sub{text-align:center;font-size:11px;color:var(--light);margin-top:7px;font-weight:500}
+    @media(max-width:640px){
+      .mobile-sticky{display:block}
+      body{padding-bottom:96px}
+      header .btn-wa{display:none}
+      .header-inner{justify-content:center}
+    }
+
+    /* Hero */
+    .hero{padding:48px 0 56px;border-bottom:1px solid var(--line);overflow:hidden;position:relative}
+    .hero::before{content:"";position:absolute;top:-80px;right:-80px;width:480px;height:480px;background:radial-gradient(circle,rgba(27,58,107,0.06) 0%,transparent 65%);pointer-events:none}
+    .hero-grid{display:grid;grid-template-columns:1fr 400px;gap:64px;align-items:center}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:var(--blue-lt);color:var(--blue);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:18px}
+    .badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green-wa);animation:pulse 2s ease infinite}
+    h1{font-family:var(--fd);font-size:clamp(32px,4.2vw,50px);font-weight:700;line-height:1.12;color:var(--ink);letter-spacing:-.02em;margin-bottom:18px}
+    h1 em{font-style:normal;color:var(--blue)}
+    .hero-sub{font-size:17px;line-height:1.65;color:var(--mid);max-width:480px;margin-bottom:20px}
+    .response-badge{display:inline-flex;align-items:center;gap:7px;background:#F0FDF4;border:1px solid #BBF7D0;border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--green);margin-bottom:24px}
+    .response-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green-wa);animation:pulse 2s ease infinite}
+    .hero-ctas{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+    .trust-list{display:flex;flex-direction:column;gap:9px}
+    .trust-item{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mid);font-weight:500}
+    .trust-item svg{width:17px;height:17px;color:var(--blue);flex-shrink:0}
+    .hero-photo-wrap{border-radius:28px;overflow:hidden;aspect-ratio:4/5;background:var(--blue-lt);box-shadow:0 24px 64px rgba(27,58,107,0.15);position:relative}
+    .hero-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 8%;display:block}
+    .photo-name-badge{position:absolute;bottom:20px;left:16px;right:16px;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-radius:14px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 20px rgba(0,0,0,0.1)}
+    .pnb-name{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+    .pnb-title{font-size:11px;color:var(--light);font-weight:500;margin-top:2px}
+    .pnb-online{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--green);white-space:nowrap}
+    .pnb-dot{width:7px;height:7px;border-radius:50%;background:var(--green-wa);animation:pulse 2s ease infinite}
+
+    /* Strip */
+    .strip{padding:22px 0;border-bottom:1px solid var(--line);background:var(--bg)}
+    .strip-inner{display:flex;align-items:center;justify-content:center;gap:36px;flex-wrap:wrap}
+    .strip-item{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:500;color:var(--mid)}
+    .strip-item svg{width:18px;height:18px;color:var(--blue)}
+    .strip-sep{width:1px;height:24px;background:var(--line)}
+
+    /* Sections */
+    .section{padding:56px 0;border-bottom:1px solid var(--line)}
+    .section-alt{background:var(--bg)}
+    .section-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+    h2{font-family:var(--fd);font-size:clamp(24px,3.2vw,36px);font-weight:700;color:var(--ink);line-height:1.18;letter-spacing:-.02em}
+    .section-sub{font-size:16px;line-height:1.65;color:var(--mid);margin-top:12px;max-width:520px}
+
+    /* Profile */
+    .profile-grid{display:grid;grid-template-columns:260px 1fr;gap:48px;margin-top:40px;align-items:start}
+    .profile-card{background:var(--bg);border:1px solid var(--line);border-radius:20px;overflow:hidden;position:sticky;top:84px}
+    .profile-photo{width:100%;aspect-ratio:1/1;overflow:hidden;background:var(--blue-lt)}
+    .profile-photo img{width:100%;height:100%;object-fit:cover;object-position:center 10%;display:block}
+    .profile-info{padding:16px 20px}
+    .profile-name{font-family:var(--fd);font-size:17px;font-weight:700;color:var(--ink)}
+    .profile-oab{font-size:11px;color:var(--light);margin-top:4px;font-weight:500}
+    .profile-bio{font-size:15px;line-height:1.7;color:var(--mid);margin-bottom:20px}
+    .response-block{display:flex;align-items:flex-start;gap:14px;background:#F0FDF4;border:1px solid #BBF7D0;border-radius:14px;padding:16px 18px;margin-bottom:24px}
+    .response-block svg{width:20px;height:20px;color:var(--green);flex-shrink:0;margin-top:1px}
+    .response-block strong{display:block;font-size:14px;font-weight:600;color:#166534;margin-bottom:3px}
+    .response-block p{font-size:13px;color:#15803D;line-height:1.5}
+    .commitments{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+    .ci{display:flex;align-items:flex-start;gap:14px;padding:16px;background:var(--bg);border:1px solid var(--line);border-radius:14px}
+    .ci-num{width:30px;height:30px;border-radius:8px;background:var(--blue-lt);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;font-weight:700;color:var(--blue);font-family:var(--fd)}
+    .ci strong{display:block;font-size:14px;font-weight:600;color:var(--ink);margin-bottom:3px}
+    .ci p{font-size:13px;color:var(--mid);line-height:1.55}
+
+    /* Steps */
+    .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:40px;background:var(--line);border-radius:22px;overflow:hidden}
+    .step{background:var(--white);padding:28px 24px}
+    .step:first-child{border-radius:22px 0 0 22px}
+    .step:last-child{border-radius:0 22px 22px 0}
+    .step-header{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+    .step-num{font-family:var(--fd);font-size:32px;font-weight:700;color:var(--line);line-height:1;flex-shrink:0}
+    .step-icon{width:40px;height:40px;border-radius:10px;background:var(--blue-lt);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .step-icon svg{width:20px;height:20px;color:var(--blue)}
+    .step h3{font-family:var(--fd);font-size:17px;font-weight:600;color:var(--ink);margin-bottom:8px}
+    .step p{font-size:14px;line-height:1.65;color:var(--mid)}
+
+    /* Info grid */
+    .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:40px;background:var(--line);border-radius:22px;overflow:hidden}
+    .info-item{background:var(--white);padding:28px}
+    .info-item:nth-child(1){border-radius:22px 0 0 0}
+    .info-item:nth-child(2){border-radius:0 22px 0 0}
+    .info-item:nth-child(3){border-radius:0 0 0 22px}
+    .info-item:nth-child(4){border-radius:0 0 22px 0}
+    .info-icon{width:40px;height:40px;border-radius:10px;background:var(--blue-lt);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+    .info-icon svg{width:20px;height:20px;color:var(--blue)}
+    .info-item h3{font-family:var(--fd);font-size:16px;font-weight:600;color:var(--ink);margin-bottom:7px}
+    .info-item p{font-size:14px;line-height:1.65;color:var(--mid)}
+
+    /* Deadline */
+    .deadline{background:#FFF8F0;border:1px solid #F5D9A8;border-radius:16px;padding:20px 24px;display:flex;align-items:flex-start;gap:16px;margin-top:40px}
+    .deadline-icon{width:36px;height:36px;border-radius:10px;background:#FEF0D5;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .deadline-icon svg{width:18px;height:18px;color:#B45309}
+    .deadline-text strong{display:inline;font-size:13px;font-weight:700;color:#92400E}
+    .deadline-text p{font-size:13px;line-height:1.6;color:#78350F}
+
+    /* FAQ */
+    .faq-list{margin-top:40px;display:flex;flex-direction:column;gap:2px;background:var(--line);border-radius:22px;overflow:hidden}
+    .faq-item{background:var(--white)}
+    .faq-item:first-child{border-radius:22px 22px 0 0}
+    .faq-item:last-child{border-radius:0 0 22px 22px}
+    .faq-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 28px;background:none;border:none;cursor:pointer;text-align:left;transition:background .15s}
+    .faq-btn:hover{background:var(--bg)}
+    .faq-question{font-family:var(--fd);font-size:16px;font-weight:600;color:var(--ink);line-height:1.3}
+    .faq-chevron{width:20px;height:20px;color:var(--blue);flex-shrink:0;transition:transform .25s}
+    .faq-item.open .faq-chevron{transform:rotate(180deg)}
+    .faq-answer{display:none;padding:0 28px 22px;font-size:14px;line-height:1.75;color:var(--mid)}
+    .faq-item.open .faq-answer{display:block}
+
+    /* Final CTA */
+    .final-cta{padding:72px 0;text-align:center;background:var(--ink);position:relative;overflow:hidden}
+    .final-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(27,58,107,0.9) 0%,transparent 60%);pointer-events:none}
+    .final-cta .section-label{color:rgba(255,255,255,0.45)}
+    .final-cta h2{color:#fff;max-width:560px;margin:0 auto 12px}
+    .final-cta .section-sub{color:rgba(255,255,255,0.6);margin:0 auto 14px}
+    .cta-response{display:inline-flex;align-items:center;gap:7px;background:rgba(37,211,102,0.15);border:1px solid rgba(37,211,102,0.3);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#86EFAC;margin-bottom:28px}
+    .cta-response-dot{width:6px;height:6px;border-radius:50%;background:var(--green-wa);animation:pulse 2s ease infinite}
+    .final-cta-row{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+    .legal-note{margin-top:24px;font-size:12px;color:rgba(255,255,255,0.3);line-height:1.6;max-width:480px;margin-left:auto;margin-right:auto}
+
+    /* Footer */
+    footer{border-top:1px solid var(--line);padding:28px 0;background:var(--white)}
+    .footer-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:wrap}
+    .footer-left{font-size:13px;color:var(--light);line-height:1.7}
+    .footer-left strong{color:var(--mid)}
+    .footer-right{display:flex;align-items:center;gap:22px}
+    .footer-link{font-size:12px;color:var(--light);transition:color .2s}
+    .footer-link:hover{color:var(--mid)}
+
+    /* Responsive */
+    @media(max-width:860px){
+      .hero-grid{grid-template-columns:1fr;gap:40px}
+      .hero-photo-wrap{max-width:360px;margin:0 auto}
+      .profile-grid{grid-template-columns:1fr}
+      .profile-card{position:static;max-width:260px}
+      .steps-grid{grid-template-columns:1fr}
+      .step{border-radius:0!important}
+      .step:first-child{border-radius:22px 22px 0 0!important}
+      .step:last-child{border-radius:0 0 22px 22px!important}
+      .info-grid{grid-template-columns:1fr}
+      .info-item{border-radius:0!important}
+      .info-item:first-child{border-radius:22px 22px 0 0!important}
+      .info-item:last-child{border-radius:0 0 22px 22px!important}
+      .strip-sep{display:none}
+    }
+    @media(max-width:580px){
+      .hero{padding:36px 0 44px}
+      .section{padding:44px 0}
+      .hero-ctas{flex-direction:column;align-items:stretch}
+      .btn-wa-lg,.btn-outline{width:100%;justify-content:center}
+      .final-cta{padding:56px 0}
+      .faq-btn{padding:18px 20px}
+      .faq-answer{padding:0 20px 18px}
+    }
+  </style>
+
+
+  <script>
+    /* ── WhatsApp ── */
+    var WA_NUMBER = "5545988110440";
+    function openWA(msg, ctx) {
+      // Meta Pixel — Lead + Contact com dados do contexto
+      try {
+        fbq('track', 'Lead', {
+          content_name: 'WhatsApp — ' + ctx,
+          content_category: 'Direito Previdenciário'
+        });
+        fbq('track', 'Contact');
+      } catch(e) {}
+      // GA4
+      try {
+        gtag('event', 'generate_lead', {method: 'whatsapp', context: ctx});
+        gtag('event', 'whatsapp_click', {context: ctx});
+      } catch(e) {}
+      // Google Ads — conversão de lead
+      try {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17983381794/77DMCOyawoAcEKLCkv9C',
+          'value': 1.0,
+          'currency': 'BRL',
+          'event_callback': function() {}
+        });
+      } catch(e) {}
+      window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg), "_blank", "noopener,noreferrer");
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      /* WhatsApp buttons */
+      document.querySelectorAll("[data-wa]").forEach(function(el) {
+        el.addEventListener("click", function(ev) {
+          ev.preventDefault();
+          openWA(el.dataset.waMsg || "Olá! Gostaria de orientação.", el.dataset.wa);
+        });
+      });
+
+      /* FAQ accordion */
+      document.querySelectorAll(".faq-btn").forEach(function(btn) {
+        btn.addEventListener("click", function() {
+          var item = btn.closest(".faq-item");
+          var isOpen = item.classList.contains("open");
+          document.querySelectorAll(".faq-item.open").forEach(function(i) { i.classList.remove("open"); });
+          if (!isOpen) {
+            item.classList.add("open");
+            try { gtag('event', 'faq_open', {question: btn.querySelector('.faq-question').textContent.trim().substring(0,60)}); } catch(e) {}
+          }
+        });
+      });
+
+      /* Outbound links */
+      document.querySelectorAll("a[href]").forEach(function(a) {
+        var href = a.getAttribute("href") || "";
+        if (href.startsWith("http") || href.startsWith("mailto") || href.startsWith("tel")) {
+          a.addEventListener("click", function() {
+            try { gtag('event', 'click', {link_url: href, link_text: (a.textContent||"").trim().substring(0,60)}); } catch(e) {}
+          });
+        }
+      });
+
+      /* Section visibility */
+      if ("IntersectionObserver" in window) {
+        var secObs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              var id = entry.target.id || entry.target.className.split(" ")[0] || "unknown";
+              try { gtag('event', 'section_view', {section: id}); } catch(e) {}
+              secObs.unobserve(entry.target);
+            }
+          });
+        }, {threshold: 0.3});
+        document.querySelectorAll("section, .strip, footer").forEach(function(s) { secObs.observe(s); });
+
+        var ctaObs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              try { gtag('event', 'cta_visible', {context: entry.target.dataset.wa || "unknown"}); } catch(e) {}
+              ctaObs.unobserve(entry.target);
+            }
+          });
+        }, {threshold: 1.0});
+        document.querySelectorAll("[data-wa]").forEach(function(el) { ctaObs.observe(el); });
+      }
+    });
+  </script>
+</head>
+<body>
+
+<div class="mobile-sticky">
+  <a href="https://wa.me/5545988110440" data-wa="mobile_sticky" data-wa-msg="Olá! Tive meu auxílio-doença negado, cortado ou cessado após perícia do INSS e gostaria de orientação.">
+    <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.856L.063 23.487a.5.5 0 0 0 .617.611l5.75-1.633A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.844 0-3.577-.49-5.075-1.346l-.363-.213-3.758 1.068 1.002-3.659-.234-.374A9.954 9.954 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    Falar no WhatsApp
+  </a>
+  <p class="mobile-sticky-sub">Respondemos em até 2h · Todos os dias, 8h–20h</p>
+</div>
+
+<header>
+  <div class="wrap">
+    <div class="header-inner">
+      <div class="logo">
+        <img src="logo.webp" width="639" height="175" alt="Advogadas Prev" fetchpriority="high">
+      </div>
+      <a href="https://wa.me/5545988110440" data-wa="header" data-wa-msg="Olá! Tive meu auxílio-doença negado, cortado ou cessado e gostaria de orientação." class="btn-wa">
+        <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.856L.063 23.487a.5.5 0 0 0 .617.611l5.75-1.633A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.844 0-3.577-.49-5.075-1.346l-.363-.213-3.758 1.068 1.002-3.659-.234-.374A9.954 9.954 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="badge a1"><span class="badge-dot"></span> Atendimento online · Todo o Brasil</p>
+        <h1 class="a2">Auxílio-doença<br><em>negado, cortado</em><br><em>ou cessado</em> pelo INSS?</h1>
+        <p class="hero-sub a3">A decisão do INSS pode ser questionada por via administrativa ou judicial. Cada caso exige análise individual da documentação médica e do histórico contributivo.</p>
+        <p class="response-badge a3"><span class="response-badge-dot"></span>Respondemos em até 2h · Todos os dias, 8h–20h</p>
+        <div class="hero-ctas a4">
+          <a href="https://wa.me/5545988110440" data-wa="hero_primary" data-wa-msg="Olá! Tive meu auxílio-doença negado/cortado/cessado pelo INSS. Gostaria de analisar meu caso." class="btn-wa btn-wa-lg">
+            <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.856L.063 23.487a.5.5 0 0 0 .617.611l5.75-1.633A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.844 0-3.577-.49-5.075-1.346l-.363-.213-3.758 1.068 1.002-3.659-.234-.374A9.954 9.954 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            Quero Analisar Meu Caso
+          </a>
+          <a href="https://wa.me/5545988110440" data-wa="hero_doubts" data-wa-msg="Olá! Tenho dúvidas sobre o auxílio-doença negado/cortado. Pode me orientar?" class="btn-outline">Tenho dúvidas</a>
+        </div>
+        <div class="trust-list a5">
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+            Atendimento direto com advogada inscrita na OAB
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Análise individual · primeiro contato gratuito
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+            Foco exclusivo em benefícios por incapacidade
+          </div>
+        </div>
+      </div>
+      <div class="a6">
+        <div class="hero-photo-wrap">
+          <img src="foto-isabela.webp" width="800" height="800" alt="Dra. Isabela Cechet - Advogada Especialista em Benefícios do INSS Negados" fetchpriority="high">
+          <div class="photo-name-badge">
+            <div>
+              <div class="pnb-name">Dra. Isabela Cechet</div>
+              <div class="pnb-title">OAB/PR 95.762 · Direito Previdenciário</div>
+            </div>
+            <div class="pnb-online"><div class="pnb-dot"></div> Online</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- URGÊNCIA: PRAZO 30 DIAS -->
+<div style="background:#FFF3CD;border-bottom:2px solid #F5C518;">
+  <div class="wrap" style="padding-top:14px;padding-bottom:14px;">
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+        <div style="width:36px;height:36px;border-radius:50%;background:#F5C518;display:flex;align-items:center;justify-content:center;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A5800" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <span style="font-family:var(--fd);font-size:15px;font-weight:700;color:#7A5800;white-space:nowrap;">Atenção ao prazo</span>
+      </div>
+      <p style="font-size:13px;color:#7A5800;line-height:1.5;margin:0;">
+        Após a decisão do INSS, você tem <strong>30 dias</strong> para recorrer administrativamente sem custo. Esse prazo corre a partir da data da notificação.
+        <a href="https://wa.me/5545988110440" data-wa="urgency_bar" data-wa-msg="Olá! Vi que tenho 30 dias para recorrer e gostaria de analisar meu caso com urgência." style="font-weight:700;color:#7A5800;text-decoration:underline;margin-left:6px;white-space:nowrap;">Verificar meu prazo →</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="strip">
+  <div class="wrap">
+    <div class="strip-inner">
+      <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>OAB/PR 95.762</div>
+      <div class="strip-sep"></div>
+      <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>Atendimento 100% Online</div>
+      <div class="strip-sep"></div>
+      <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8Z"/><path d="M6 2v4"/><path d="M10 2v4"/></svg>Foco exclusivo em incapacidade</div>
+      <div class="strip-sep"></div>
+      <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Todo o Brasil</div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="wrap">
+    <p class="section-label">Advogada responsável</p>
+    <h2>Quem vai cuidar<br>do seu caso</h2>
+    <div class="profile-grid">
+      <div class="profile-card">
+        <div class="profile-photo">
+          <img src="isa2.webp" width="260" height="260" alt="Dra. Isabela Wrubel Cechet, Advogada Especialista em INSS" loading="lazy">
+        </div>
+        <div class="profile-info">
+          <div class="profile-name">Dra. Isabela Cechet</div>
+          <div class="profile-oab">OAB/PR 95.762 · Direito Previdenciário</div>
+        </div>
+      </div>
+      <div>
+        <p class="profile-bio" style="font-size:13px;font-weight:600;color:var(--blue);letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px;">Foco exclusivo em benefícios por incapacidade</p>
+        <p class="profile-bio">Com atuação focada em benefícios por incapacidade, analisa cada caso considerando a documentação médica, o histórico contributivo e a atividade profissional do cliente — fatores que diretamente influenciam a avaliação do INSS.</p>
+        <p class="profile-bio">O atendimento é realizado integralmente de forma online, possibilitando orientação jurídica para segurados em qualquer estado do Brasil, sem necessidade de deslocamento.</p>
+        <div class="response-block">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <div>
+            <strong>Respondemos em até 2 horas</strong>
+            <p>Atendimento todos os dias, das 8h às 20h. Você pode enviar sua situação a qualquer momento.</p>
+          </div>
+        </div>
+        <div class="commitments">
+          <div class="ci"><div class="ci-num">01</div><div><strong>Linguagem clara</strong><p>Explicação objetiva da situação jurídica, dos caminhos disponíveis e das perspectivas reais de cada um.</p></div></div>
+          <div class="ci"><div class="ci-num">02</div><div><strong>Análise individualizada</strong><p>Cada caso é avaliado de forma específica — não há diagnóstico genérico sem análise da documentação.</p></div></div>
+          <div class="ci"><div class="ci-num">03</div><div><strong>Orientação com critério</strong><p>Indicação da via mais adequada — recurso administrativo ou judicial — conforme a viabilidade do caso.</p></div></div>
+        </div>
+        <a href="https://wa.me/5545988110440" data-wa="profile_cta" data-wa-msg="Olá, Dra. Isabela! Tive meu auxílio-doença negado/cortado/cessado pelo INSS e gostaria de uma orientação." class="btn-wa btn-wa-lg">
+          <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.856L.063 23.487a.5.5 0 0 0 .617.611l5.75-1.633A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.844 0-3.577-.49-5.075-1.346l-.363-.213-3.758 1.068 1.002-3.659-.234-.374A9.954 9.954 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Falar com a Dra. Isabela
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <p class="section-label">Processo de atendimento</p>
+    <h2>Como funciona,<br>da primeira mensagem à orientação</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-header"><span class="step-num">01</span><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a8 8 0 0 1-8 8H7l-4 2 1.5-4.5A8 8 0 1 1 21 12Z"/></svg></div></div>
+        <h3>Você envia sua situação</h3>
+        <p>Descreve brevemente o que aconteceu com seu benefício — por mensagem, sem necessidade de ligar.</p>
+      </div>
+      <div class="step">
+        <div class="step-header"><span class="step-num">02</span><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h6"/></svg></div></div>
+        <h3>Análise da documentação</h3>
+        <p>Se tiver laudos ou carta do INSS, você envia pelo próprio WhatsApp para análise individual.</p>
+      </div>
+      <div class="step">
+        <div class="step-header"><span class="step-num">03</span><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></div></div>
+        <h3>Orientação sobre os caminhos</h3>
+        <p>Com base na análise, você recebe orientação sobre as alternativas — recurso administrativo ou ação judicial.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="section-label">Critérios técnicos</p>
+    <h2>O que o INSS avalia<br>na perícia médica</h2>
+    <p class="section-sub">Entender os critérios utilizados é o primeiro passo para identificar eventuais inconsistências na decisão.</p>
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/></svg></div>
+        <h3>Sua condição te impede de trabalhar?</h3>
+        <p>O perito avalia se as limitações físicas ou psíquicas impedem o exercício das atividades inerentes à profissão declarada.</p>
+      </div>
+      <div class="info-item">
+        <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
+        <h3>Qual era o seu trabalho antes?</h3>
+        <p>A incapacidade é analisada em relação à ocupação habitual. Atividades físicas têm critérios distintos de trabalhos administrativos.</p>
+      </div>
+      <div class="info-item">
+        <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5V4.5A2.5 2.5 0 0 1 6.5 2Z"/><path d="M8 7h8"/><path d="M8 11h8"/><path d="M8 15h5"/></svg></div>
+        <h3>Você tem documentos médicos que comprovam?</h3>
+        <p>A correspondência entre o diagnóstico, as limitações dos laudos e a função exercida é determinante para o resultado da perícia.</p>
+      </div>
+      <div class="info-item">
+        <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 2v4"/><path d="M16 2v4"/><path d="M3 10h18"/><path d="M5 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"/></svg></div>
+        <h3>Você estava em dia com o INSS?</h3>
+        <p>O histórico contributivo influencia a elegibilidade. Tempo de contribuição e qualidade de segurado são verificados pelo INSS.</p>
+      </div>
+    </div>
+    <div class="deadline">
+      <div class="deadline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+      <div class="deadline-text">
+        <p><strong>Atenção:</strong> O prazo para recurso ao CRPS é de <strong>30 dias</strong> a partir da data de ciência da decisão. Após esse período, pode restar apenas a via judicial.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <p class="section-label">Perguntas frequentes</p>
+    <h2>Dúvidas mais comuns<br>sobre o auxílio-doença</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-question">O que fazer quando o INSS nega o auxílio-doença?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-answer">Você tem <strong>30 dias corridos</strong> a partir da data da notificação para entrar com recurso administrativo pelo Meu INSS, sem custo. Se o prazo já passou ou o recurso for negado, ainda é possível questionar pela Justiça. Em ambos os casos, o ideal é analisar a documentação médica e o histórico contributivo antes de decidir o caminho. <a href="https://wa.me/5545988110440" data-wa="faq_negativa" data-wa-msg="Olá! Meu auxílio-doença foi negado e quero saber qual o melhor caminho para recorrer." style="color:var(--blue);font-weight:600;">→ Quero analisar meu caso</a></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-question">Por que o INSS negou meu benefício?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-answer">Os motivos mais comuns de negativa em 2026 são: <strong>laudo médico genérico</strong> (sem descrever o impacto da doença na sua capacidade de trabalhar), <strong>CNIS incompleto</strong> (falhas no histórico contributivo) e <strong>perícia sem tempo suficiente</strong> para avaliar doenças crônicas ou psicológicas. O INSS indefere sem explicar o que faltou — e muita gente desiste sem saber que tinha direito. <em>(Fonte: Portal de Dados Abertos do INSS, 2025–2026)</em></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-question">Qual o prazo para recorrer após a perícia do INSS?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-answer">O prazo é de <strong>30 dias corridos</strong> a partir da data em que você recebeu a decisão. O recurso é enviado ao Conselho de Recursos da Previdência Social (CRPS) pelo Meu INSS, sem pagar nada. Se perder esse prazo, pode ser necessário fazer um novo pedido do zero ou entrar com ação judicial. <a href="https://wa.me/5545988110440" data-wa="faq_prazo" data-wa-msg="Olá! Quero verificar se meu prazo para recorrer ainda está dentro dos 30 dias." style="color:var(--blue);font-weight:600;">→ Verificar meu prazo agora</a></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-question">Cortaram meu benefício no pente-fino. O que fazer?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-answer">O pente-fino é um programa de revisão em massa do INSS. De julho a dezembro de 2024, foram revisados 684 mil auxílios-doença — e <strong>356 mil foram cortados</strong> (52% do total revisado). Em 2025, mais 802 mil aposentadorias por incapacidade estão na fila de revisão. Muitos cortes foram por análise superficial. Você tem <strong>30 dias</strong> para recorrer administrativamente ou entrar com ação judicial com pedido de tutela urgente para restabelecer o benefício. <em>(Fonte: Ministério da Previdência Social, 2024–2025)</em> <a href="https://wa.me/5545988110440" data-wa="faq_pentefino" data-wa-msg="Olá! Meu benefício foi cortado no pente-fino e quero saber como contestar." style="color:var(--blue);font-weight:600;">→ Quero contestar o corte</a></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-question">Se ganhar na Justiça, recebo os valores atrasados?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-answer">Sim. Se a ação judicial for ganha, você tem direito a receber <strong>todos os valores retroativos</strong> desde a data do primeiro pedido negado. Dependendo do tempo sem receber, esse valor pode chegar a R$ 15 mil ou mais. Cerca de <strong>70% dos casos contestados judicialmente</strong> são revertidos. O valor exato depende da análise do seu histórico contributivo e do período sem benefício.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-question">Quanto tempo demora um recurso ou ação judicial?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-answer">O <strong>recurso administrativo</strong> costuma levar de 3 a 6 meses para ser julgado. A <strong>ação judicial</strong> pode ser mais rápida quando há urgência: é possível pedir tutela de urgência, e o juiz pode determinar o restabelecimento do benefício em dias ou semanas enquanto o processo corre. O caminho mais adequado depende da sua situação específica.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-question">Vale a pena contestar se já fui negado uma vez?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-answer">Sim. A negativa inicial não é definitiva. Dados do TCU mostram que <strong>27% dos benefícios negados são revertidos</strong> ainda na fase administrativa. Outros <strong>13% são reconhecidos na Justiça</strong> — somando mais de 40% de reversões no total. Muitos segurados desistem sem saber que tinham direito. <em>(Fonte: TCU, Acórdão 2.859/2023)</em></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-question">Preciso de advogado para recorrer ao INSS?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-answer">O recurso administrativo pode ser feito sem advogado. Mas a orientação jurídica antes de protocolar faz diferença: ajuda a identificar o real motivo da negativa, orientar a complementação dos documentos e apresentar os argumentos certos ao CRPS. Para ação judicial, a representação por advogado é obrigatória. O primeiro contato aqui é gratuito. <a href="https://wa.me/5545988110440" data-wa="faq_advogado" data-wa-msg="Olá! Quero entender se preciso de advogado para recorrer da negativa do INSS." style="color:var(--blue);font-weight:600;">→ Tirar dúvidas sem compromisso</a></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-question">Meu laudo médico é bom, mas o INSS negou. Por quê?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-answer">Ter diagnóstico não é suficiente. O INSS avalia se a doença <strong>impede você de trabalhar na sua função específica</strong>. Laudos que não descrevem o impacto funcional (o que você deixou de conseguir fazer por causa da doença), sem CID atualizado ou sem correlação com sua profissão são frequentemente desconsiderados — mesmo que o médico diga que você não tem condições de trabalhar.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="wrap" style="position:relative;z-index:1;">
+    <p class="section-label">Próximo passo</p>
+    <h2>Entenda sua situação<br>com base na sua documentação</h2>
+    <p class="section-sub">O primeiro contato é gratuito. Você relata o caso, envia o que tiver disponível e recebe orientação sobre os caminhos jurídicos aplicáveis.</p>
+    <p class="cta-response"><span class="cta-response-dot"></span>Respondemos em até 2h · Todos os dias, 8h–20h</p>
+    <div class="final-cta-row">
+      <a href="https://wa.me/5545988110440" data-wa="final_primary" data-wa-msg="Olá! Gostaria de analisar meu caso de auxílio-doença negado/cortado/cessado pelo INSS." class="btn-wa btn-wa-lg">
+        <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.856L.063 23.487a.5.5 0 0 0 .617.611l5.75-1.633A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.844 0-3.577-.49-5.075-1.346l-.363-.213-3.758 1.068 1.002-3.659-.234-.374A9.954 9.954 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Quero Analisar Meu Caso
+      </a>
+    </div>
+    <p class="legal-note">Este contato não implica contratação nem garante resultado. A orientação depende de análise individual da documentação médica e do histórico contributivo de cada segurado.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <strong>Advogadas Prev</strong> · Dra. Isabela Wrubel Cechet · OAB/PR 95.762<br>
+        Direito Previdenciário · Atendimento online para todo o Brasil<br>
+        R. Santa Catarina, 481 - Centro, Cascavel - PR, 85801-040<br>
+        <a href="/cdn-cgi/l/email-protection#335a405251565f525056505b56471510050708545e525a5f1d505c5e" style="color:var(--light)">isabelacechet&#64;gmail.com</a> · <a href="https://wa.me/5545988110440" style="color:var(---light)">+55 45 98811-0440</a>
+      </div>
+      <div class="footer-right" style="align-self:flex-end;">
+        <a href="/politica-de-privacidade" class="footer-link">Política de Privacidade</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80" fill="none">
+
+  <!-- Top rule line — full width -->
+  <line x1="0" y1="6" x2="400" y2="6" stroke="#1B2D4F" stroke-width="1.2"/>
+
+  <!-- ADVOGADAS — main wordmark -->
+  <text
+    x="200"
+    y="48"
+    font-family="'Cormorant Garamond', 'Didot', 'Bodoni MT', 'Playfair Display', 'Times New Roman', Georgia, serif"
+    font-size="36"
+    font-weight="300"
+    letter-spacing="9"
+    fill="#1B2D4F"
+    text-anchor="middle"
+  >ADVOGADAS</text>
+
+  <!-- Left decorative rule beside PREV -->
+  <line x1="0" y1="67" x2="148" y2="67" stroke="#1B2D4F" stroke-width="0.9"/>
+
+  <!-- PREV — subtitle -->
+  <text
+    x="200"
+    y="76"
+    font-family="'Cormorant Garamond', 'Didot', 'Bodoni MT', 'Playfair Display', 'Times New Roman', Georgia, serif"
+    font-size="14"
+    font-weight="300"
+    letter-spacing="12"
+    fill="#1B2D4F"
+    text-anchor="middle"
+  >PREV</text>
+
+  <!-- Right decorative rule beside PREV -->
+  <line x1="252" y1="67" x2="400" y2="67" stroke="#1B2D4F" stroke-width="0.9"/>
+
+</svg>

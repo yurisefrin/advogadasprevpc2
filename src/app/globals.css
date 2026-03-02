@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #1A1A2E;
+  --ink2: #2D2D3F;
+  --mid: #4A4A5A;
+  --light: #8A8A9A;
+  --line: #E8E8EE;
+  --bg: #F7F8FA;
+  --bg2: #EFF1F6;
+  --white: #FFFFFF;
+  --blue: #1B3A6B;
+  --blue-mid: #2A5298;
+  --blue-lt: #E8EFF8;
+  --blue-lter: #F3F6FB;
+  --gold: #BFA055;
+  --gold-lt: #FAF5E8;
+  --gold-border: #E8D5A0;
+  --green-wa: #25D366;
+  --green: #128C4E;
+  --green-lt: #F0FDF4;
+  --green-border: #BBF7D0;
+  --teal: #0D7377;
+  --teal-lt: #E6F4F4;
+  --max: 1080px;
+  --r: 20px;
+}
+
+body {
+  background: var(--white);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.a1 { animation: fadeUp 0.7s 0.05s ease both; }
+.a2 { animation: fadeUp 0.7s 0.15s ease both; }
+.a3 { animation: fadeUp 0.7s 0.25s ease both; }
+.a4 { animation: fadeUp 0.7s 0.35s ease both; }
+.a5 { animation: fadeUp 0.7s 0.45s ease both; }
+.a6 { animation: fadeIn 0.9s 0.50s ease both; }
