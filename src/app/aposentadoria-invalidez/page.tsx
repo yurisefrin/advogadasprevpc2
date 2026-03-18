@@ -4,14 +4,23 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Aposentadoria por Invalidez INSS | Negada ou Cessada | Advogadas Prev",
     description: "Teve o Auxílio-Doença ou Aposentadoria por Invalidez negado no pente-fino do INSS? Entenda seus direitos, acréscimo de 25% e prazo de recurso.",
+    alternates: { canonical: '/aposentadoria-invalidez' },
+    openGraph: {
+        title: "Aposentadoria por Invalidez INSS",
+        description: "Teve o Auxílio-Doença ou Aposentadoria por Invalidez negado no pente-fino do INSS? Entenda seus direitos, acréscimo de 25% e prazo de recurso.",
+        url: '/aposentadoria-invalidez',
+        siteName: 'Advogadas Prev',
+        type: 'website',
+    },
 };
 
 const data: LandingPageData = {
+    slug: 'aposentadoria-invalidez',
     title: "Aposentadoria por Invalidez INSS | Negada ou Cessada | Advogadas Prev",
     description: "Teve o Auxílio-Doença ou Aposentadoria por Invalidez negado no pente-fino do INSS? Entenda seus direitos, acréscimo de 25% e prazo de recurso.",
     heroTitle: <>Aposentadoria por<br /><em className="text-[#1B3A6B] not-italic">Invalidez</em> negada<br />ou cessada pelo INSS?</>,
     heroDescription: "A aposentadoria por incapacidade permanente é para quem não pode mais trabalhar em nenhuma atividade. Mas o INSS nega ou cessa frequentemente, mesmo com laudos médicos comprovando a invalidez.",
-    heroPrimaryCTA: "Quero Analisar Meu Caso",
+    heroPrimaryCTA: "Quero saber se tenho direito",
     heroPrimaryMsg: "Olá! Minha aposentadoria por invalidez foi negada/cessada e gostaria de orientação.",
     heroSecondaryCTA: "Tenho dúvidas",
     heroSecondaryMsg: "Olá! Tenho dúvidas sobre aposentadoria por invalidez. Pode me orientar?",
@@ -48,7 +57,7 @@ const data: LandingPageData = {
     ],
     ctaTitle: <>Entenda sua situação<br />com base na documentação médica</>,
     ctaDescription: "Envie seus laudos e receba uma análise gratuita do seu caso.",
-    ctaButtonText: "Quero Analisar Meu Caso",
+    ctaButtonText: "Quero saber se tenho direito",
     ctaMsg: "Olá! Gostaria de analisar meu caso de aposentadoria por invalidez."
 };
 

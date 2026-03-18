@@ -58,7 +58,7 @@ export default function PoliticaDePrivacidade() {
                     <p>Para exercer qualquer um de seus direitos ou esclarecer dúvidas sobre esta Política de Privacidade, entre em contato conosco através de:</p>
                     <ul className="mt-3">
                         <li><strong>WhatsApp:</strong> (45) 98811-0440 / (45) 99959-2867</li>
-                        <li><strong>E-mail:</strong> isabelacechet@gmail.com</li>
+                        <li><strong>E-mail:</strong> contato.advogadasprev@gmail.com</li>
                         <li><strong>Endereço Sede:</strong> R. Santa Catarina, 481 — Centro, Cascavel/PR · 85801-040</li>
                     </ul>
                 </div>

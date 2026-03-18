@@ -4,9 +4,18 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Benefício Cortado no Pente-Fino INSS | Como Restabelecer | Advogadas Prev",
     description: "Teve a aposentadoria por invalidez, auxílio-doença ou BPC cortado na revisão do INSS? Veja como contestar a alta indevida e pedir liminar na Justiça.",
+    alternates: { canonical: '/revisao-pente-fino' },
+    openGraph: {
+        title: "Benefício Cortado no Pente-Fino INSS | Como Restabelecer",
+        description: "Teve a aposentadoria por invalidez, auxílio-doença ou BPC cortado na revisão do INSS? Veja como contestar a alta indevida e pedir liminar na Justiça.",
+        url: '/revisao-pente-fino',
+        siteName: 'Advogadas Prev',
+        type: 'website',
+    },
 };
 
 const data: LandingPageData = {
+    slug: 'revisao-pente-fino',
     title: "Benefício Cortado no Pente-Fino INSS | Como Restabelecer | Advogadas Prev",
     description: "Teve a aposentadoria por invalidez, auxílio-doença ou BPC cortado na revisão do INSS? Veja como contestar a alta indevida e pedir liminar na Justiça.",
     heroTitle: <>Benefício cortado<br /><em className="text-[#1B3A6B] not-italic">no Pente-Fino</em><br />do INSS?</>,

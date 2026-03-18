@@ -4,9 +4,18 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Pensão por Morte INSS | Proteção aos Dependentes | Advogadas Prev",
     description: "Teve a pensão por morte negada pelo INSS por falta de união estável ou qualidade de segurado? Veja prazos e descubra como tentar reverter a decisão.",
+    alternates: { canonical: '/pensao-por-morte' },
+    openGraph: {
+        title: "Pensão por Morte INSS | Proteção aos Dependentes",
+        description: "Teve a pensão por morte negada pelo INSS por falta de união estável ou qualidade de segurado? Veja prazos e descubra como tentar reverter a decisão.",
+        url: '/pensao-por-morte',
+        siteName: 'Advogadas Prev',
+        type: 'website',
+    },
 };
 
 const data: LandingPageData = {
+    slug: 'pensao-por-morte',
     title: "Pensão por Morte INSS | Proteção aos Dependentes | Advogadas Prev",
     description: "Teve a pensão por morte negada pelo INSS por falta de união estável ou qualidade de segurado? Veja prazos e descubra como tentar reverter a decisão.",
     heroTitle: <>Pensão por Morte<br /><em className="text-[#1B3A6B] not-italic">negada ou com</em><br /><em className="text-[#1B3A6B] not-italic">valor incorreto</em>?</>,
@@ -14,7 +23,7 @@ const data: LandingPageData = {
     heroImg: "/foto-isabela.webp",
     profileImg: "/isa2.webp",
     lawyerId: "isabela",
-    heroPrimaryCTA: "Quero Analisar Meu Caso",
+    heroPrimaryCTA: "Quero saber se tenho direito",
     heroPrimaryMsg: "Olá! Tive a pensão por morte negada ou com valor incorreto e gostaria de orientação.",
     heroSecondaryCTA: "Tenho dúvidas",
     heroSecondaryMsg: "Olá! Tenho dúvidas sobre pensão por morte. Pode me orientar?",
@@ -48,7 +57,7 @@ const data: LandingPageData = {
     ],
     ctaTitle: <>Proteja seus direitos<br />como dependente</>,
     ctaDescription: "O primeiro contato é gratuito. Envie a documentação disponível e receba orientação.",
-    ctaButtonText: "Quero Analisar Meu Caso",
+    ctaButtonText: "Quero saber se tenho direito",
     ctaMsg: "Olá! Gostaria de analisar meu caso de pensão por morte."
 };
 

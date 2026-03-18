@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { CalculatorIcon } from "@/components/LandingPageTemplate";
+import HomeServiceExplorer from "@/components/HomeServiceExplorer";
 import Script from "next/script";
 import { Metadata } from "next";
 
@@ -66,7 +67,7 @@ export default function Home() {
           </nav>
           <a href="https://wa.me/5545988110440" className="btn-wa flex items-center gap-2 bg-[--green-wa] text-white text-sm font-semibold px-5 py-[10px] rounded-full hover:opacity-90 transition-all">
             <WhatsAppIcon />
-            Consultoria Gratuita
+            Quero saber se tenho direito
           </a>
         </div>
       </header>
@@ -94,7 +95,7 @@ export default function Home() {
                 <div className="hero-ctas a4 flex items-center gap-[14px] flex-wrap mb-[30px]">
                   <a href="https://wa.me/5545988110440" className="btn-wa bg-[--green-wa] text-white text-base font-semibold px-8 py-[15px] rounded-full flex items-center gap-2 hover:opacity-90 transition-all">
                     <WhatsAppIcon className="w-[18px] h-[18px]" />
-                    Consultoria Gratuita
+                    Quero saber se tenho direito
                   </a>
                   <a href="#servicos" className="btn-outline inline-flex items-center gap-2 bg-[--blue] text-white border-[1.5px] border-[--blue] text-[15px] font-semibold px-7 py-[13px] rounded-full hover:opacity-90 transition-all shadow-md">
                     Ver Áreas de Atuação
@@ -102,7 +103,7 @@ export default function Home() {
                 </div>
                 <div className="trust-list a5 flex flex-col gap-[9px]">
                   <TrustItem icon={<ShieldIcon />} text="Advogadas OAB/PR com especialização exclusiva em Previdenciário" />
-                  <TrustItem icon={<ClockIcon />} text="Primeiro contato gratuito · Sem burocracia, sem deslocamento" />
+                  <TrustItem icon={<ClockIcon />} text="Atendimento imediato · Sem burocracia, sem deslocamento" />
                   <TrustItem icon={<MapPinIcon />} text="Atendimento 100% online para qualquer estado do Brasil" />
                 </div>
               </div>
@@ -110,14 +111,14 @@ export default function Home() {
               <div className="a6">
                 <div className="hero-photo-wrap rounded-[--r] overflow-hidden aspect-[4/5] bg-[--blue-lt] shadow-[0_28px_72px_rgba(27,58,107,0.16)] relative">
                   <Image src="/foto-equipe.png" width={800} height={1000} className="w-full h-full object-cover object-[center_15%]" alt="Equipe Advogadas Prev - Dra. Isabela e Dra. Juliana" priority />
-                  <div className="photo-badge absolute bottom-[18px] left-[14px] right-[14px] bg-white/96 backdrop-blur-[12px] rounded-[14px] p-[14px_18px] flex items-center justify-between shadow-[0_4px_24px_rgba(0,0,0,0.1)]">
+                   <div className="photo-badge absolute bottom-[18px] left-[14px] right-[14px] bg-[--ink]/80 backdrop-blur-[12px] rounded-[14px] p-[14px_18px] flex items-center justify-between shadow-2xl border border-white/10">
                     <div>
-                      <div className="pb-names font-playfair text-sm font-bold text-[--ink] leading-[1.3]">Dra. Isabela & Dra. Juliana</div>
-                      <div className="pb-oab text-[11px] text-[--light] mt-[3px]">OAB/PR · Direito Previdenciário</div>
+                       <div className="pb-names font-playfair text-sm font-bold text-white leading-[1.3]">Dra. Isabela & Dra. Juliana</div>
+                       <div className="pb-oab text-[11px] text-white/70 mt-[3px]">OAB/PR · Direito Previdenciário</div>
                     </div>
-                    <div className="pb-online flex items-center gap-[6px] text-[11px] font-semibold text-[--green] whitespace-nowrap">
-                      <div className="pb-dot w-[7px] h-[7px] rounded-full bg-[--green-wa] animate-pulse"></div> Online agora
-                    </div>
+                     <div className="pb-online flex items-center gap-[6px] text-[11px] font-semibold text-[#86EFAC] whitespace-nowrap">
+                       <div className="pb-dot w-[7px] h-[7px] rounded-full bg-[--green-wa] animate-pulse"></div> Online agora
+                     </div>
                   </div>
                 </div>
               </div>
@@ -151,7 +152,7 @@ export default function Home() {
                     Responda 5 perguntas rápidas e entenda na hora sua viabilidade jurídica para 2026.
                   </p>
                   <a href="/bpc" className="bg-[#15803D] text-white text-[15px] font-bold px-8 py-3.5 rounded-full hover:bg-[#16A34A] transition-all flex items-center gap-2 w-fit">
-                    Usar Calculadora Gratuita
+                    Usar Calculadora BPC
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-[18px] h-[18px]"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                   </a>
                 </div>
@@ -168,64 +169,9 @@ export default function Home() {
           <div className="wrap">
             <p className="section-label text-[11px] font-bold tracking-[0.12em] uppercase text-[--blue] mb-[10px]">Áreas de Atuação</p>
             <h2 className="font-playfair text-[clamp(26px,3.2vw,38px)] font-bold text-[--ink] leading-[1.15] tracking-[-0.022em]">Em qual momento da sua vida<br />podemos ajudar?</h2>
-            <p className="section-sub text-base leading-[1.7] text-[--mid] mt-[12px] max-w-[540px]">Nosso escritório atua exclusivamente em Direito Previdenciário. Para facilitar sua orientação, organizamos nossa atuação em três grandes áreas.</p>
+            <p className="section-sub text-base leading-[1.7] text-[--mid] mt-[12px] max-w-[540px] mb-12">Nosso escritório atua exclusivamente em Direito Previdenciário. Toque em cada área para ver os serviços disponíveis.</p>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-[2px] mt-12 bg-[--line] rounded-[--r] overflow-hidden">
-              <ServiceCard
-                title="Planejamento e Aposentadorias"
-                tag="O Futuro"
-                tagClass="svc-tag-gold"
-                icon={<StackIcon className="text-[--gold]" />}
-                iconClass="bg-[--gold-lt]"
-                description="Cada ano de contribuição tem valor. Com a estratégia certa, a diferença entre uma aposentadoria comum e a aposentadoria que você merece pode ser de anos de espera — ou de dezenas de milhares de reais a mais."
-                items={[
-                  { label: "Aposentadoria por Tempo de Contribuição", href: "/aposentadoria-tempo-contribuicao" },
-                  { label: "Aposentadoria por Idade", href: "/aposentadoria-idade" },
-                  { label: "Aposentadoria Especial", href: "/aposentadoria-especial" },
-                  { label: "Planejamento Previdenciário", href: "/planejamento-previdenciario" },
-                  { label: "Revisão e Majoração de Benefício", href: "/revisao-beneficio" },
-                ]}
-                ctaText="Planejar minha aposentadoria"
-                ctaClass="svc-cta-gold"
-                href="/planejamento-previdenciario"
-              />
-              <ServiceCard
-                title="Saúde e Incapacidade"
-                tag="O Presente"
-                tagClass="svc-tag-blue"
-                icon={<ActivityIcon className="text-[--blue]" />}
-                iconClass="bg-[--blue-lt]"
-                description="Quando a saúde impede de trabalhar, o INSS tem obrigação legal de garantir sua renda. Se o benefício foi negado, cortado ou cessado, existe caminho jurídico para reverter — e nós sabemos qual."
-                items={[
-                  { label: "Auxílio-Doença Negado ou Cessado", href: "/auxilio-doenca" },
-                  { label: "Aposentadoria por Invalidez", href: "/aposentadoria-invalidez" },
-                  { label: "Auxílio-Acidente", href: "/auxilio-acidente" },
-                  { label: "Recursos ao CRPS", href: "/recursos-crps" },
-                  { label: "Revisão após Pente-Fino", href: "/revisao-pente-fino" },
-                ]}
-                ctaText="Analisar meu benefício negado"
-                ctaClass="svc-cta-blue"
-                href="/auxilio-doenca"
-              />
-              <ServiceCard
-                title="Proteção Social e Familiar"
-                tag="O Amparo"
-                tagClass="svc-tag-teal"
-                icon={<UsersIcon className="text-[--teal]" />}
-                iconClass="bg-[--teal-lt]"
-                description="Para quem mais precisa. Famílias em situação de vulnerabilidade, pessoas com deficiência e dependentes têm direitos previdenciários que muitas vezes são negados sem orientação jurídica adequada."
-                items={[
-                  { label: "BPC/LOAS — Pessoa com Deficiência", href: "/bpc-loas-deficiencia" },
-                  { label: "BPC/LOAS — Idoso", href: "/bpc-loas-idoso" },
-                  { label: "Pensão por Morte", href: "/pensao-por-morte" },
-                  { label: "Auxílio-Reclusão", href: "/auxilio-reclusao" },
-                  { label: "Salário-Maternidade", href: "/salario-maternidade" },
-                ]}
-                ctaText="Usar Calculadora BPC"
-                ctaClass="svc-cta-teal"
-                href="/bpc"
-              />
-            </div>
+            <HomeServiceExplorer />
           </div>
         </section>
 
@@ -268,9 +214,9 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px] mt-12 bg-[--line] rounded-[--r] overflow-hidden">
               <StepItem
                 num="01"
-                title="Análise Gratuita do Caso"
+                title="Diagnóstico de Viabilidade em 2h"
                 icon={<MessageIcon />}
-                description="Você nos conta sua situação pelo WhatsApp. Nossa equipe avalia o histórico e identifica os melhores caminhos — sem custo e sem compromisso."
+                description="Não fique na dúvida. Nossa equipe analisa seu histórico e te diz, de forma clara e rápida, quais as chances reais de recuperar seu pagamento e receber os valores atrasados."
               />
               <StepItem
                 num="02"
@@ -320,7 +266,7 @@ export default function Home() {
                 Escritório especializado em Direito Previdenciário.<br />
                 Atendimento 100% online para todo o Brasil.<br />
                 R. Santa Catarina, 481 — Centro, Cascavel/PR · 85801-040<br />
-                <a href="mailto:isabelacechet@gmail.com" className="hover:text-[--mid]">isabelacechet@gmail.com</a><br />
+                <a href="mailto:contato.advogadasprev@gmail.com" className="hover:text-[--mid]">contato.advogadasprev@gmail.com</a><br />
                 <a href="https://wa.me/5545988110440" className="hover:text-[--mid]">+55 45 98811-0440</a> ·
                 <a href="https://wa.me/5545999592867" className="hover:text-[--mid]">+55 45 99959-2867</a>
               </p>

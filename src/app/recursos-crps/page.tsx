@@ -4,13 +4,22 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Recurso ao CRPS | Contestar INSS Administrativamente | Advogadas Prev",
     description: "Teve o benefício negado pelo INSS? Veja como o recurso administrativo ao CRPS pode ser mais rápido e eficiente que uma ação na Justiça.",
+    alternates: { canonical: '/recursos-crps' },
+    openGraph: {
+        title: "Recurso ao CRPS | Contestar INSS Administrativamente",
+        description: "Teve o benefício negado pelo INSS? Veja como o recurso administrativo ao CRPS pode ser mais rápido e eficiente que uma ação na Justiça.",
+        url: '/recursos-crps',
+        siteName: 'Advogadas Prev',
+        type: 'website',
+    },
 };
 
 const data: LandingPageData = {
+    slug: 'recursos-crps',
     title: "Recurso ao CRPS | Contestar INSS Administrativamente | Advogadas Prev",
     description: "Teve o benefício negado pelo INSS? Veja como o recurso administrativo ao CRPS pode ser mais rápido e eficiente que uma ação na Justiça.",
     heroTitle: <>Recurso ao<br /><em className="text-[#1B3A6B] not-italic">CRPS</em> — conteste<br />a decisão do INSS</>,
-    heroDescription: "O Conselho de Recursos da Previdência Social (CRPS) é a instância administrativa para contestar decisões do INSS. É gratuito, mais rápido que a via judicial e pode reverter negativas sem a necessidade de um processo.",
+    heroDescription: "O Conselho de Recursos da Previdência Social (CRPS) é a instância administrativa para contestar decisões do INSS. É sem custos judiciais iniciais, mais rápido que a via judicial e pode reverter negativas sem a necessidade de um processo.",
     heroImg: "/juliana-perfil-2.jpg",
     profileImg: "/juliana-perfil-1.jpg",
     lawyerId: "juliana",

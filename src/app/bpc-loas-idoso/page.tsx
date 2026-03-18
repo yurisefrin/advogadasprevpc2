@@ -4,9 +4,18 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "BPC LOAS para Idoso | Aposentadoria sem Contribuição | Advogadas Prev",
     description: "Tem 65 anos ou mais e nunca contribuiu para o INSS? Saiba como funciona a lei do BPC/LOAS, como descontar renda da família e pedir seu benefício.",
+    alternates: { canonical: '/bpc-loas-idoso' },
+    openGraph: {
+        title: "BPC/LOAS para Idoso | Benefício Assistencial",
+        description: "Tem 65 anos ou mais e nunca contribuiu para o INSS? Saiba como funciona a lei do BPC/LOAS, como descontar renda da família e pedir seu benefício.",
+        url: '/bpc-loas-idoso',
+        siteName: 'Advogadas Prev',
+        type: 'website',
+    },
 };
 
 const data: LandingPageData = {
+    slug: 'bpc-loas-idoso',
     title: "BPC LOAS para Idoso | Aposentadoria sem Contribuição | Advogadas Prev",
     description: "Tem 65 anos ou mais e nunca contribuiu para o INSS? Saiba como funciona a lei do BPC/LOAS, como descontar renda da família e pedir seu benefício.",
     heroTitle: <>BPC/LOAS para<br /><em className="text-[#1B3A6B] not-italic">Idoso</em> — garanta<br />seu benefício</>,
@@ -14,7 +23,7 @@ const data: LandingPageData = {
     heroImg: "/foto-isabela.webp",
     profileImg: "/isa2.webp",
     lawyerId: "isabela",
-    heroPrimaryCTA: "Quero Analisar Meu Caso",
+    heroPrimaryCTA: "Quero saber se tenho direito",
     heroPrimaryMsg: "Olá! Sou idoso e gostaria de saber se tenho direito ao BPC/LOAS.",
     heroSecondaryCTA: "Tenho dúvidas",
     heroSecondaryMsg: "Olá! Tenho dúvidas sobre o BPC/LOAS para idoso. Pode me orientar?",
@@ -36,7 +45,7 @@ const data: LandingPageData = {
         { icon: <BriefcaseIcon />, title: "Quem mora na mesma casa?", desc: "A composição do grupo familiar influencia diretamente o cálculo. Nem todas as pessoas que moram junto entram na conta." },
         { icon: <BookIcon />, title: "Está inscrito no CadÚnico?", desc: "O Cadastro Único é requisito obrigatório. Se não está inscrito, a orientação inclui como providenciar." }
     ],
-    deadlineText: <>Use nossa <strong>Calculadora BPC gratuita</strong> para verificar instantaneamente se a renda familiar está dentro do limite.</>,
+    deadlineText: <>Use nossa <strong>Calculadora BPC</strong> para verificar instantaneamente se a renda familiar está dentro do limite.</>,
     faqTitle: <>Dúvidas comuns sobre<br />BPC/LOAS para idoso</>,
     faqs: [
         { q: "Meu cônjuge ganha 1 salário mínimo de aposentadoria, ainda tenho direito ao BPC?", a: "SIM! A lei estabelece que o benefício de 1 salário mínimo de outro idoso da MESMA casa (seja aposentadoria, BPC ou pensão) NÃO entra no cálculo da renda per capita para você pedir o seu BPC. Marido e mulher idosos podem receber SIM, um aposentadoria e outro BPC, ou até dois BPCs.", cta: "Avaliar o cálculo para minha família", ctaMsg: "Olá! Meu marido/esposa já recebe do INSS e quero saber se posso pedir o BPC." },
@@ -46,8 +55,8 @@ const data: LandingPageData = {
         { q: "O INSS negou dizendo que a renda passa do limite. E agora?", a: "Um dos nossos principais trabalhos judiciais é comprovar que o INSS errou no cálculo. Na Justiça, podemos descontar contas de água, luz, aluguel, plano de saúde, farmácia e fraldas da renda bruta, enquadrando vocês no limite legal novamente.", cta: "Tive o BPC Idoso negado por renda", ctaMsg: "O INSS negou meu BPC dizendo que a renda per capita não cumpriu a regra." }
     ],
     ctaTitle: <>Garanta seu direito<br />ao BPC/LOAS</>,
-    ctaDescription: "Use a calculadora gratuita ou fale diretamente com a advogada para uma análise personalizada.",
-    ctaButtonText: "Quero Analisar Meu Caso",
+    ctaDescription: "Use a calculadora inteligente ou fale diretamente com a advogada para uma análise personalizada.",
+    ctaButtonText: "Quero saber se tenho direito",
     ctaMsg: "Olá! Sou idoso e gostaria de analisar meu direito ao BPC/LOAS."
 };
 

@@ -4,14 +4,23 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Auxílio-Acidente INSS | Indenização por Sequelas | Advogadas Prev",
     description: "Sofreu um acidente ou tem doença ocupacional que deixou sequelas? Saiba como receber metade do seu benefício e continuar trabalhando.",
+    alternates: { canonical: '/auxilio-acidente' },
+    openGraph: {
+        title: "Auxílio-Acidente INSS | Sequelas e Redução de Capacidade",
+        description: "Sofreu um acidente ou tem doença ocupacional que deixou sequelas? Saiba como receber metade do seu benefício e continuar trabalhando.",
+        url: '/auxilio-acidente',
+        siteName: 'Advogadas Prev',
+        type: 'website',
+    },
 };
 
 const data: LandingPageData = {
+    slug: 'auxilio-acidente',
     title: "Auxílio-Acidente INSS | Indenização por Sequelas | Advogadas Prev",
     description: "Sofreu um acidente ou tem doença ocupacional que deixou sequelas? Saiba como receber metade do seu benefício e continuar trabalhando.",
     heroTitle: <>Auxílio-Acidente<br /><em className="text-[#1B3A6B] not-italic">negado ou não</em><br /><em className="text-[#1B3A6B] not-italic">reconhecido</em> pelo INSS?</>,
     heroDescription: "O auxílio-acidente é um benefício indenizatório para quem ficou com sequelas permanentes após acidente ou doença ocupacional. É pago mesmo que você continue trabalhando.",
-    heroPrimaryCTA: "Quero Analisar Meu Caso",
+    heroPrimaryCTA: "Quero saber se tenho direito",
     heroPrimaryMsg: "Olá! Fiquei com sequelas de acidente/doença e gostaria de saber sobre o auxílio-acidente.",
     heroSecondaryCTA: "Tenho dúvidas",
     heroSecondaryMsg: "Olá! Tenho dúvidas sobre auxílio-acidente. Pode me orientar?",
@@ -45,7 +54,7 @@ const data: LandingPageData = {
     ],
     ctaTitle: <>Entenda seu direito<br />ao auxílio-acidente</>,
     ctaDescription: "Envie seus laudos médicos e receba uma análise gratuita das suas sequelas.",
-    ctaButtonText: "Quero Analisar Meu Caso",
+    ctaButtonText: "Quero saber se tenho direito",
     ctaMsg: "Olá! Gostaria de analisar meu direito ao auxílio-acidente."
 };
 

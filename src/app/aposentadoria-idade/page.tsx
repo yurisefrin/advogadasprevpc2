@@ -4,6 +4,14 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Aposentadoria por Idade | Valor e Requisitos INSS | Advogadas Prev",
     description: "Aposentadoria por Idade negada ou com valor baixo? Veja os requisitos para 2026, cálculo do benefício e carência exigida pelo INSS.",
+    alternates: { canonical: '/aposentadoria-idade' },
+    openGraph: {
+        title: "Aposentadoria por Idade INSS",
+        description: "Aposentadoria por Idade negada ou com valor baixo? Veja os requisitos para 2026, cálculo do benefício e carência exigida pelo INSS.",
+        url: '/aposentadoria-idade',
+        siteName: 'Advogadas Prev',
+        type: 'website',
+    },
 };
 
 const data: LandingPageData = {
@@ -13,7 +21,7 @@ const data: LandingPageData = {
     // Hero
     heroTitle: <>Aposentadoria por<br /><em className="text-[#1B3A6B] not-italic">Idade</em> negada<br />ou com valor baixo?</>,
     heroDescription: "Você trabalhou a vida toda e agora merece o descanso com o melhor valor possível. Analisamos descartes inteligentes e regras de transição para garantir o maior benefício.",
-    heroPrimaryCTA: "Quero Analisar Meu Caso",
+    heroPrimaryCTA: "Quero saber se tenho direito",
     heroPrimaryMsg: "Olá! Gostaria de uma análise da minha aposentadoria por idade.",
     heroSecondaryCTA: "Tenho dúvidas",
     heroSecondaryMsg: "Olá! Tenho dúvidas sobre aposentadoria por idade. Pode me orientar?",
@@ -48,7 +56,7 @@ const data: LandingPageData = {
     ],
     ctaTitle: <>Entenda seu direito<br />à aposentadoria por idade</>,
     ctaDescription: "O primeiro contato não tem custo. Envie seus dados e receba uma análise preliminar.",
-    ctaButtonText: "Quero Analisar Meu Caso",
+    ctaButtonText: "Quero saber se tenho direito",
     ctaMsg: "Olá! Gostaria de analisar minha aposentadoria por idade.",
 };
 

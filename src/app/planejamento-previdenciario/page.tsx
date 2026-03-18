@@ -4,9 +4,18 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Planejamento Previdenciário | Advogadas Prev",
     description: "Faça seu planejamento previdenciário e garanta a melhor aposentadoria possível sem perder tempo ou dinheiro.",
+    alternates: { canonical: '/planejamento-previdenciario' },
+    openGraph: {
+        title: "Planejamento Previdenciário",
+        description: "Faça seu planejamento previdenciário e garanta a melhor aposentadoria possível sem perder tempo ou dinheiro.",
+        url: '/planejamento-previdenciario',
+        siteName: 'Advogadas Prev',
+        type: 'website',
+    },
 };
 
 const data: LandingPageData = {
+    slug: 'planejamento-previdenciario',
     title: "Planejamento Previdenciário | Advogadas Prev",
     description: "Faça seu planejamento previdenciário e garanta a melhor aposentadoria possível sem perder tempo ou dinheiro.",
     heroTitle: <>Planejamento<br /><em className="text-[#1B3A6B] not-italic">Previdenciário</em><br />inteligente e estratégico</>,

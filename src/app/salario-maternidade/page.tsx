@@ -4,9 +4,18 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Salário-Maternidade INSS | Negado ou Calculado Errado | Advogadas Prev",
     description: "O INSS negou seu salário-maternidade por falta de carência ou diz que você perdeu a qualidade de segurado? Veja respostas e o que fazer.",
+    alternates: { canonical: '/salario-maternidade' },
+    openGraph: {
+        title: "Salário-Maternidade INSS | Negado ou Calculado Errado",
+        description: "O INSS negou seu salário-maternidade por falta de carência ou diz que você perdeu a qualidade de segurado? Veja respostas e o que fazer.",
+        url: '/salario-maternidade',
+        siteName: 'Advogadas Prev',
+        type: 'website',
+    },
 };
 
 const data: LandingPageData = {
+    slug: 'salario-maternidade',
     title: "Salário-Maternidade INSS | Negado ou Calculado Errado | Advogadas Prev",
     description: "O INSS negou seu salário-maternidade por falta de carência ou diz que você perdeu a qualidade de segurado? Veja respostas e o que fazer.",
     heroTitle: <>Salário-Maternidade<br /><em className="text-[#1B3A6B] not-italic">negado ou com</em><br /><em className="text-[#1B3A6B] not-italic">valor incorreto</em>?</>,
@@ -14,7 +23,7 @@ const data: LandingPageData = {
     heroImg: "/foto-isabela.webp",
     profileImg: "/isa2.webp",
     lawyerId: "isabela",
-    heroPrimaryCTA: "Quero Analisar Meu Caso",
+    heroPrimaryCTA: "Quero saber se tenho direito",
     heroPrimaryMsg: "Olá! Meu salário-maternidade foi negado e gostaria de orientação.",
     heroSecondaryCTA: "Tenho dúvidas",
     heroSecondaryMsg: "Olá! Tenho dúvidas sobre salário-maternidade. Pode me orientar?",
@@ -45,7 +54,7 @@ const data: LandingPageData = {
     ],
     ctaTitle: <>Proteja seu direito<br />ao salário-maternidade</>,
     ctaDescription: "Envie suas contribuições e receba uma análise gratuita da viabilidade.",
-    ctaButtonText: "Quero Analisar Meu Caso",
+    ctaButtonText: "Quero saber se tenho direito",
     ctaMsg: "Olá! Gostaria de analisar meu direito ao salário-maternidade."
 };
 

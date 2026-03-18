@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Verificador BPC/LOAS Gratuito | Advocacia Especializada",
+    title: "Verificador BPC/LOAS | Advocacia Especializada",
     description: "Faça o cálculo de renda per capita e preencha as 5 perguntas e descubra na hora se você ou sua família tem direito ao BPC/LOAS no INSS em 2026.",
 };
 

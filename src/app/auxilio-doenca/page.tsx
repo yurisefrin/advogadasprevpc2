@@ -4,21 +4,30 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Auxílio-Doença INSS Negado ou Cortado? | Advogadas Prev",
     description: "Teve o Auxílio-Doença negado ou cortado pelo INSS? A perícia deu alta indevida? Veja como recorrer e garantir seu benefício com orientação especializada.",
+    alternates: { canonical: '/auxilio-doenca' },
+    openGraph: {
+        title: "Auxílio-Doença INSS Negado ou Cortado?",
+        description: "Teve o Auxílio-Doença negado ou cortado pelo INSS? A perícia deu alta indevida? Veja como recorrer e garantir seu benefício com orientação especializada.",
+        url: '/auxilio-doenca',
+        siteName: 'Advogadas Prev',
+        type: 'website',
+    },
 };
 
 const data: LandingPageData = {
+    slug: 'auxilio-doenca',
     title: "Auxílio-Doença INSS Negado ou Cortado? | Advogadas Prev",
     description: "Teve o Auxílio-Doença negado ou cortado pelo INSS? A perícia deu alta indevida? Veja como recorrer e garantir seu benefício com orientação especializada.",
     heroTitle: <>Auxílio-Doença<br /><em className="text-[#1B3A6B] not-italic">negado ou cortado</em><br />pelo INSS?</>,
-    heroDescription: "A decisão do INSS pode ser questionada por via administrativa ou judicial. Cada caso exige análise individual da documentação médica e do histórico contributivo.",
+    heroDescription: "Uma perícia de 2 minutos não define sua saúde. Como especialistas, analisamos falhas técnicas no seu laudo para construir sua estratégia de reversão com segurança.",
     heroImg: "/foto-isabela.webp",
     profileImg: "/isa2.webp",
-    heroPrimaryCTA: "Quero Analisar Meu Caso",
+    heroPrimaryCTA: "Quero saber se tenho direito",
     heroPrimaryMsg: "Olá! Meu auxílio-doença foi negado/cortado e gostaria de orientação.",
     heroSecondaryCTA: "Tenho dúvidas",
     heroSecondaryMsg: "Olá! Tenho dúvidas sobre auxílio-doença. Pode me orientar?",
-    trustItems: ["Atendimento direto com advogada especialista", "Revisão detalhada de atestados, laudos e receitas médicas", "Foco exclusivo em restabelecimento de benefícios"],
-    urgencyText: <>Após a alta ou negativa do INSS ou do Pente-fino, você deve recorrer imediatamente para não perder retroativos.</>,
+    trustItems: ["Primeira avaliação sem custo e sem compromisso", "Atendimento 100% online, de qualquer estado do Brasil", "Atuação exclusiva em Direito Previdenciário"],
+    urgencyText: <>O prazo para recurso administrativo é de 30 dias após a negativa. Quanto antes buscar orientação, maiores as possibilidades.</>,
     urgencyMsg: "Olá! Vi que perdi meu benefício e preciso recorrer rápido.",
     stripFocus: "Restabelecimento de benefício",
     profileFocus: "Especialista em benefícios por incapacidade e doença",
@@ -47,7 +56,7 @@ const data: LandingPageData = {
     ],
     ctaTitle: <>Entenda sua situação<br />com nossos especialistas</>,
     ctaDescription: "Envie a folha da negativa e seu laudo médico para verificarmos se você tem chances.",
-    ctaButtonText: "Quero Analisar Meu Caso",
+    ctaButtonText: "Quero saber se tenho direito",
     ctaMsg: "Olá! Gostaria de analisar meu Auxílio-Doença negado."
 };
 

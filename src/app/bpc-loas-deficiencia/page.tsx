@@ -4,9 +4,18 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "BPC LOAS para Deficiente | Advogado Especialista INSS | Advogadas Prev",
     description: "Entenda as regras de renda per capita e como funciona a perícia médica e social do INSS para aprovar o BPC para Pessoas com Deficiência e Autismo em 2026.",
+    alternates: { canonical: '/bpc-loas-deficiencia' },
+    openGraph: {
+        title: "BPC/LOAS para Pessoa com Deficiência",
+        description: "Entenda as regras de renda per capita e como funciona a perícia médica e social do INSS para aprovar o BPC para Pessoas com Deficiência e Autismo em 2026.",
+        url: '/bpc-loas-deficiencia',
+        siteName: 'Advogadas Prev',
+        type: 'website',
+    },
 };
 
 const data: LandingPageData = {
+    slug: 'bpc-loas-deficiencia',
     title: "BPC LOAS para Deficiente | Advogado Especialista INSS | Advogadas Prev",
     description: "Entenda as regras de renda per capita e como funciona a perícia médica e social do INSS para aprovar o BPC para Pessoas com Deficiência e Autismo em 2026.",
     heroTitle: <>BPC/LOAS para<br /><em className="text-[#1B3A6B] not-italic">Pessoa com</em><br /><em className="text-[#1B3A6B] not-italic">Deficiência</em></>,
@@ -14,7 +23,7 @@ const data: LandingPageData = {
     heroImg: "/foto-isabela.webp",
     profileImg: "/isa2.webp",
     lawyerId: "isabela",
-    heroPrimaryCTA: "Quero Analisar Meu Caso",
+    heroPrimaryCTA: "Quero saber se tenho direito",
     heroPrimaryMsg: "Olá! Sou pessoa com deficiência e gostaria de saber se tenho direito ao BPC/LOAS.",
     heroSecondaryCTA: "Tenho dúvidas",
     heroSecondaryMsg: "Olá! Tenho dúvidas sobre o BPC/LOAS para pessoa com deficiência. Pode me orientar?",
@@ -36,7 +45,7 @@ const data: LandingPageData = {
         { icon: <BookIcon />, title: "A avaliação biopsicossocial foi adequada?", desc: "A avaliação é feita por perito médico E assistente social. Se desconsideraram aspectos importantes, é possível recorrer." },
         { icon: <CalendarIcon />, title: "Quem compõe o grupo familiar?", desc: "O INSS analisa a renda de todos que moram na mesma casa. A composição correta do grupo familiar pode ser determinante." }
     ],
-    deadlineText: <>Use nossa <strong>Calculadora BPC gratuita</strong> para verificar se a renda per capita da família está dentro do limite legal.</>,
+    deadlineText: <>Use nossa <strong>Calculadora BPC</strong> para verificar se a renda per capita da família está dentro do limite legal.</>,
     faqTitle: <>Dúvidas comuns sobre<br />BPC/LOAS para pessoa com deficiência</>,
     faqs: [
         { q: "Autista tem direito ao BPC/LOAS?", a: "Sim! Autismo (TEA) é considerado deficiência para todos os fins legais no Brasil. Se a família se enquadrar no critério de renda, o autista infantil ou adulto tem direito ao benefício de 1 salário mínimo.", cta: "Saber sobre BPC para Autista", ctaMsg: "Olá! Meu filho(a) tem autismo e quero saber se temos direito ao BPC/LOAS." },
@@ -46,8 +55,8 @@ const data: LandingPageData = {
         { q: "O BPC/LOAS tem décimo terceiro?", a: "Não. Por ser um benefício assistencial e não previdenciário, ele paga 12 parcelas de um salário mínimo por ano, sem 13º salário e não gera direito à pensão por morte para viúvos." }
     ],
     ctaTitle: <>Descubra seu direito<br />ao BPC/LOAS</>,
-    ctaDescription: "Use a calculadora gratuita ou fale diretamente com a advogada para uma análise personalizada.",
-    ctaButtonText: "Quero Analisar Meu Caso",
+    ctaDescription: "Use a calculadora inteligente ou fale diretamente com a advogada para uma análise personalizada.",
+    ctaButtonText: "Quero saber se tenho direito",
     ctaMsg: "Olá! Sou pessoa com deficiência e gostaria de analisar meu direito ao BPC/LOAS."
 };
 

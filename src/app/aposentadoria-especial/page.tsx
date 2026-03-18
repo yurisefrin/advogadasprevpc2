@@ -4,16 +4,25 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Aposentadoria Especial | Como Conseguir com o INSS | Advogadas Prev",
     description: "Trabalhou exposto a insalubridade ou periculosidade? Entenda a revisão do PPP, LTCAT e como conseguir sua Aposentadoria Especial em 2026.",
+    alternates: { canonical: '/aposentadoria-especial' },
+    openGraph: {
+        title: "Aposentadoria Especial | Insalubridade e Periculosidade",
+        description: "Trabalhou exposto a insalubridade ou periculosidade? Entenda a revisão do PPP, LTCAT e como conseguir sua Aposentadoria Especial em 2026.",
+        url: '/aposentadoria-especial',
+        siteName: 'Advogadas Prev',
+        type: 'website',
+    },
 };
 
 const data: LandingPageData = {
+    slug: 'aposentadoria-especial',
     title: "Aposentadoria Especial | Como Conseguir com o INSS | Advogadas Prev",
     description: "Trabalhou exposto a insalubridade ou periculosidade? Entenda a revisão do PPP, LTCAT e como conseguir sua Aposentadoria Especial em 2026.",
     heroTitle: <>Aposentadoria<br /><em className="text-[#1B3A6B] not-italic">Especial</em> negada<br />ou não reconhecida?</>,
     heroDescription: "Quem trabalhou exposto a agentes nocivos (ruído, calor, produtos químicos, eletricidade) pode se aposentar mais cedo. Mas o INSS frequentemente nega o enquadramento especial por falta de documentação adequada.",
     heroImg: "/juliana-perfil-1.jpg",
     profileImg: "/juliana-perfil-3.jpg",
-    heroPrimaryCTA: "Quero Analisar Meu Caso",
+    heroPrimaryCTA: "Quero saber se tenho direito",
     heroPrimaryMsg: "Olá! Trabalhei em condições especiais e gostaria de analisar minha aposentadoria especial.",
     heroSecondaryCTA: "Tenho dúvidas",
     heroSecondaryMsg: "Olá! Tenho dúvidas sobre aposentadoria especial. Pode me orientar?",
@@ -45,7 +54,7 @@ const data: LandingPageData = {
     ],
     ctaTitle: <>Analise seu direito<br />à aposentadoria especial</>,
     ctaDescription: "O primeiro contato não tem custo e ajudamos você a verificar seus laudos antes de arriscar reprovação.",
-    ctaButtonText: "Quero Analisar Meu Caso",
+    ctaButtonText: "Quero saber se tenho direito",
     ctaMsg: "Olá! Gostaria de analisar minha aposentadoria especial.",
     lawyerId: "juliana"
 };

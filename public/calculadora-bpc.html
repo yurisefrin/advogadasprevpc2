@@ -1026,7 +1026,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
         </svg>
-        Análise jurídica · Atualizado para 2026 · Salário mínimo R$&nbsp;1.518
+        Análise jurídica · Atualizado para 2026 · Salário mínimo R$&nbsp;1.621
       </div>
     </div>
 
@@ -1142,6 +1142,13 @@
                     <div class="opt-sub">Impedimento recente — ainda não atingiu prazo mínimo</div>
                   </div>
                 </div>
+                <div class="opt" data-f="tempoPcd" data-v="previsao" onclick="pick(this)">
+                  <div class="opt-radio"></div>
+                  <div class="opt-body">
+                    <div class="opt-label">Menos de 2 anos, mas com previsão superior</div>
+                    <div class="opt-sub">Existe há menos de 2 anos, mas a previsão de tratamento/duração é superior a 2 anos</div>
+                  </div>
+                </div>
                 <div class="opt" data-f="tempoPcd" data-v="longo" onclick="pick(this)">
                   <div class="opt-radio"></div>
                   <div class="opt-body">
@@ -1188,8 +1195,7 @@
           </div>
         </div>
         <div class="step-body">
-          <p class="step-desc">O BPC não pode ser acumulado com aposentadoria, pensão ou seguro-desemprego. Exceção: se
-            o benefício atual for inferior a R$ 1.518, é possível renunciar a ele e trocar pelo BPC.</p>
+          <p class="step-desc">O BPC não pode ser acumulado com aposentadoria, pensão ou seguro-desemprego.</p>
 
           <div class="field">
             <div class="field-label">O requerente recebe algum desses benefícios atualmente?</div>
@@ -1204,14 +1210,14 @@
               <div class="opt" data-f="acum" data-v="menor" onclick="pick(this); toggleAcum()">
                 <div class="opt-radio"></div>
                 <div class="opt-body">
-                  <div class="opt-label">Sim — abaixo de R$ 1.518</div>
+                  <div class="opt-label">Sim — abaixo de R$ 1.621</div>
                   <div class="opt-sub">Benefício inferior ao salário mínimo — possível renúncia e troca</div>
                 </div>
               </div>
               <div class="opt" data-f="acum" data-v="maior" onclick="pick(this); toggleAcum()">
                 <div class="opt-radio"></div>
                 <div class="opt-body">
-                  <div class="opt-label">Sim — R$ 1.518 ou mais</div>
+                  <div class="opt-label">Sim — R$ 1.621 ou mais</div>
                   <div class="opt-sub">Benefício igual ou superior ao BPC — acúmulo sem ganho</div>
                 </div>
               </div>
@@ -1526,7 +1532,7 @@
 
     <div class="page-footer">
       <strong>Advogadas Prev</strong> · Dra. Isabela Cechet — OAB/PR 95.762 · Dra. Juliana Wessler — OAB/PR<br>
-      Baseado na Lei 8.742/1993 e atualizações 2026 · SM vigente: R$ 1.518,00
+      Baseado na Lei 8.742/1993 e atualizações 2026 · SM vigente: R$ 1.621,00
     </div>
 
   </div><!-- /shell -->
@@ -1572,7 +1578,7 @@
     /* ═══════════════════════════════════════════
        CONSTANTES LEGAIS 2026
     ═══════════════════════════════════════════ */
-    var SM = 1518.00;
+    var SM = 1621.00;
     var QUARTO_SM = 405.25;
     var MEIO_SM = 810.50;
     var WA_NUM = '5545988110440';
@@ -1770,7 +1776,7 @@
         'block:idade': { titulo: 'Idade Mínima Não Atingida', sub: 'O BPC para idosos exige 65 anos completos. Com ' + (parseInt(D.idade) || 0) + ' anos, faltam ' + (65 - (parseInt(D.idade) || 0)) + ' ano(s). O pedido poderá ser feito ao completar 65 anos.', rows: [{ k: 'Idade atual', v: (D.idade || '-') + ' anos', c: 'bad' }, { k: 'Mínimo exigido', v: '65 anos', c: 'bad' }, { k: 'Diagnóstico', v: 'Inviável no momento — monitorar ao completar 65', c: 'mid' }] },
         'block:tempoPcd': { titulo: 'Impedimento de Curto Prazo', sub: 'O BPC para PcD exige impedimento de longo prazo — mínimo 2 anos. O caso poderá ser reavaliado quando completar esse período.', rows: [{ k: 'Duração do impedimento', v: 'Menos de 2 anos', c: 'bad' }, { k: 'Mínimo exigido', v: '2 anos', c: 'bad' }, { k: 'Diagnóstico', v: 'Inviável no momento — reavaliar após 2 anos', c: 'mid' }] },
         'block:laudo': { titulo: 'Laudo Médico Insuficiente', sub: 'O INSS exige laudo que descreva as limitações funcionais — não apenas o diagnóstico. Solicite ao médico especialista um laudo detalhando impactos em autocuidado, locomoção ou participação social.', rows: [{ k: 'Laudo funcional', v: 'Não possui', c: 'bad' }, { k: 'Próximo passo', v: 'Solicitar laudo ao médico com impacto funcional', c: 'mid' }, { k: 'Diagnóstico', v: 'Aguardando documentação adequada', c: 'mid' }] },
-        'block:acumulo': { titulo: 'Acúmulo de Benefício', sub: 'O benefício atual (R$ 1.518 ou mais) já é igual ou superior ao valor do BPC. A troca não traz ganho financeiro. O BPC/LOAS é indevido nessa situação.', rows: [{ k: 'Benefício atual', v: '≥ R$ 1.518', c: 'bad' }, { k: 'Valor do BPC 2026', v: 'R$ 1.518,00 (1 SM)', c: '' }, { k: 'Diagnóstico', v: 'Inviável — sem ganho na troca', c: 'bad' }] }
+        'block:acumulo': { titulo: 'Acúmulo de Benefício', sub: 'O benefício atual (R$ 1.621 ou mais) já é igual ou superior ao valor do BPC. A troca não traz ganho financeiro. O BPC/LOAS é indevido nessa situação.', rows: [{ k: 'Benefício atual', v: '≥ R$ 1.621', c: 'bad' }, { k: 'Valor do BPC 2026', v: 'R$ 1.621,00 (1 SM)', c: '' }, { k: 'Diagnóstico', v: 'Inviável — sem ganho na troca', c: 'bad' }] }
       };
 
       if (bloqueios[v]) {

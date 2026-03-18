@@ -4,9 +4,18 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Auxílio-Reclusão INSS | Benefício para Dependentes | Advogadas Prev",
     description: "O auxílio-reclusão é um direito dos dependentes. Saiba os critérios de baixa renda, quem tem direito e como comprovar qualidade de segurado.",
+    alternates: { canonical: '/auxilio-reclusao' },
+    openGraph: {
+        title: "Auxílio-Reclusão INSS | Proteção à Família",
+        description: "O auxílio-reclusão é um direito dos dependentes. Saiba os critérios de baixa renda, quem tem direito e como comprovar qualidade de segurado.",
+        url: '/auxilio-reclusao',
+        siteName: 'Advogadas Prev',
+        type: 'website',
+    },
 };
 
 const data: LandingPageData = {
+    slug: 'auxilio-reclusao',
     title: "Auxílio-Reclusão INSS | Benefício para Dependentes | Advogadas Prev",
     description: "O auxílio-reclusão é um direito dos dependentes. Saiba os critérios de baixa renda, quem tem direito e como comprovar qualidade de segurado.",
     heroTitle: <>Auxílio-Reclusão<br /><em className="text-[#1B3A6B] not-italic">negado ou não</em><br /><em className="text-[#1B3A6B] not-italic">reconhecido</em>?</>,
@@ -14,7 +23,7 @@ const data: LandingPageData = {
     heroImg: "/foto-isabela.webp",
     profileImg: "/isa2.webp",
     lawyerId: "isabela",
-    heroPrimaryCTA: "Quero Analisar Meu Caso",
+    heroPrimaryCTA: "Quero saber se tenho direito",
     heroPrimaryMsg: "Olá! Gostaria de saber se tenho direito ao auxílio-reclusão para os dependentes de familiar preso.",
     heroSecondaryCTA: "Tenho dúvidas",
     heroSecondaryMsg: "Olá! Tenho dúvidas sobre auxílio-reclusão. Pode me orientar?",
@@ -45,7 +54,7 @@ const data: LandingPageData = {
     ],
     ctaTitle: <>Entenda o direito dos<br />dependentes ao auxílio-reclusão</>,
     ctaDescription: "O primeiro contato é gratuito e sigiloso. Receba orientação sobre os caminhos disponíveis.",
-    ctaButtonText: "Quero Analisar Meu Caso",
+    ctaButtonText: "Quero saber se tenho direito",
     ctaMsg: "Olá! Gostaria de analisar o direito ao auxílio-reclusão para os dependentes."
 };
 

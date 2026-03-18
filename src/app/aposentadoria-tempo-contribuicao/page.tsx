@@ -4,21 +4,30 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Aposentadoria por Tempo de Contribuição | Advogadas Prev",
     description: "Descubra se você tem direito à Aposentadoria por Tempo de Contribuição, regras de transição em 2026 e como garantir o melhor benefício.",
+    alternates: { canonical: '/aposentadoria-tempo-contribuicao' },
+    openGraph: {
+        title: "Aposentadoria por Tempo de Contribuição",
+        description: "Descubra se você tem direito à Aposentadoria por Tempo de Contribuição, regras de transição em 2026 e como garantir o melhor benefício.",
+        url: '/aposentadoria-tempo-contribuicao',
+        siteName: 'Advogadas Prev',
+        type: 'website',
+    },
 };
 
 const data: LandingPageData = {
+    slug: 'aposentadoria-tempo-contribuicao',
     title: "Aposentadoria por Tempo de Contribuição | Regras 2026 | Advogadas Prev",
     description: "Saiba se você tem direito à Aposentadoria por Tempo de Contribuição nas regras de transição. Análise de pedágio 50% e 100%, pontos e idade progressiva.",
     heroTitle: <>Aposentadoria por<br /><em className="text-[#1B3A6B] not-italic">Tempo de Contribuição</em><br />negada ou com erro?</>,
     heroDescription: "As regras mudaram com a Reforma de 2019, mas direitos adquiridos e regras de transição ainda garantem aposentadorias vantajosas. A análise correta do seu histórico contributivo é determinante.",
-    heroPrimaryCTA: "Quero Analisar Meu Caso",
+    heroPrimaryCTA: "Quero saber se tenho direito",
     heroPrimaryMsg: "Olá! Gostaria de analisar minha aposentadoria por tempo de contribuição.",
     heroSecondaryCTA: "Tenho dúvidas",
     heroSecondaryMsg: "Olá! Tenho dúvidas sobre aposentadoria por tempo de contribuição. Pode me orientar?",
     heroImg: "/juliana-perfil-1.jpg",
     profileImg: "/juliana-perfil-4.jpg",
     lawyerId: "juliana",
-    trustItems: ["Atendimento direto com advogada inscrita na OAB", "Análise individual do CNIS · primeiro contato gratuito", "Foco exclusivo em Direito Previdenciário"],
+    trustItems: ["Atendimento direto com advogada inscrita na OAB", "Análise individual do CNIS · atendimento imediato", "Foco exclusivo em Direito Previdenciário"],
     stripFocus: "Especialistas em aposentadorias",
     profileFocus: "Especialista em planejamento de aposentadorias",
     profileBio: [
@@ -47,7 +56,7 @@ const data: LandingPageData = {
     ],
     ctaTitle: <>Descubra o melhor caminho<br />para sua aposentadoria</>,
     ctaDescription: "O primeiro contato é gratuito. Envie seu CNIS e receba uma análise das suas possibilidades.",
-    ctaButtonText: "Quero Analisar Meu Caso",
+    ctaButtonText: "Quero saber se tenho direito",
     ctaMsg: "Olá! Gostaria de analisar minha aposentadoria por tempo de contribuição.",
 };
 

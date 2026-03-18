@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import SiloNavigation from "@/components/SiloNavigation";
 
 const WA_NUMBER = "5545988110440";
 
@@ -59,6 +61,8 @@ export interface LandingPageData {
     ctaDescription: string;
     ctaButtonText: string;
     ctaMsg: string;
+    // Page slug for SEO (e.g. 'auxilio-doenca')
+    slug?: string;
     // BPC Calculator CTAs (optional)
     bpcCalculatorCTA?: boolean;
     // Images (optional overrides)
@@ -90,22 +94,27 @@ export default function LandingPageTemplate({ data }: { data: LandingPageData })
     const lawyerImage = lawyerId === "isabela" ? "Dra. Isabela Wrubel Cechet" : "Dra. Juliana Wessler Grignani";
 
     // ─── GERADOR DE SCHEMA JSON-LD ───
+    const pageSlug = data.slug || data.title.replace(/\s+/g, '-').toLowerCase();
+    const pageUrl = `https://www.advogadasprev.com.br/${pageSlug}`;
     const schemaData = {
         "@context": "https://schema.org",
         "@graph": [
             {
                 "@type": "LegalService",
-                "@id": `https://advogadasprev.com.br/#legal-service-${lawyerId}`,
+                "@id": `https://www.advogadasprev.com.br/#legal-service-${lawyerId}`,
                 "name": data.title,
                 "description": data.description,
-                "url": "https://advogadasprev.com.br",
-                "logo": "https://advogadasprev.com.br/logo.webp",
-                "image": "https://advogadasprev.com.br/logo.webp",
+                "url": pageUrl,
+                "logo": "https://www.advogadasprev.com.br/logo.webp",
+                "image": "https://www.advogadasprev.com.br/logo.webp",
                 "priceRange": "$$",
                 "telephone": "+5545988110440",
                 "address": {
                     "@type": "PostalAddress",
-                    "addressLocality": "Atendimento 100% Online",
+                    "streetAddress": "R. Santa Catarina, 481 - Centro",
+                    "addressLocality": "Cascavel",
+                    "addressRegion": "PR",
+                    "postalCode": "85801-040",
                     "addressCountry": "BR"
                 },
                 "areaServed": "BR",
@@ -121,29 +130,12 @@ export default function LandingPageTemplate({ data }: { data: LandingPageData })
                     "name": lawyerName,
                     "jobTitle": "Advogada Previdenciária",
                     "description": lawyerOAB
-                }
-            },
-            {
-                "@type": "BreadcrumbList",
-                "@id": `https://advogadasprev.com.br/#breadcrumb-${data.title.replace(/\s+/g, '-').toLowerCase()}`,
-                "itemListElement": [
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Início",
-                        "item": "https://advogadasprev.com.br"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": data.title,
-                        "item": `https://advogadasprev.com.br/${data.title.replace(/\s+/g, '-').toLowerCase()}`
-                    }
-                ]
+                },
+                "dateModified": new Date().toISOString().split('T')[0]
             },
             ...(data.faqs && data.faqs.length > 0 ? [{
                 "@type": "FAQPage",
-                "@id": `https://advogadasprev.com.br/#faq-${lawyerId}`,
+                "@id": `${pageUrl}#faq`,
                 "mainEntity": data.faqs.map(faq => ({
                     "@type": "Question",
                     "name": faq.q,
@@ -152,14 +144,32 @@ export default function LandingPageTemplate({ data }: { data: LandingPageData })
                         "text": faq.a
                     }
                 }))
-            }] : [])
+            }] : []),
+            {
+                "@type": "WebPage",
+                "@id": pageUrl,
+                "name": data.title,
+                "description": data.description,
+                "url": pageUrl,
+                "dateModified": new Date().toISOString().split('T')[0],
+                "inLanguage": "pt-BR",
+                "isPartOf": {
+                    "@type": "WebSite",
+                    "name": "Advogadas Prev",
+                    "url": "https://www.advogadasprev.com.br"
+                },
+                "speakable": {
+                    "@type": "SpeakableSpecification",
+                    "cssSelector": ["h1", ".hero-description", ".faq-answer"]
+                }
+            }
         ]
     };
 
     return (
         <div className="font-sans text-[#1C1C1E] bg-white pt-[68px]">
             {/* ─── SCHEMA JSON-LD ─── */}
-            <Script id={`schema-${data.title.replace(/\s+/g, '-').toLowerCase()}`} type="application/ld+json" strategy="beforeInteractive">
+            <Script id={`schema-${pageSlug}`} type="application/ld+json" strategy="beforeInteractive">
                 {JSON.stringify(schemaData)}
             </Script>
 
@@ -179,6 +189,9 @@ export default function LandingPageTemplate({ data }: { data: LandingPageData })
                 </div>
             </header>
 
+            {/* ─── BREADCRUMBS ─── */}
+            {data.slug && <Breadcrumbs serviceName={data.title.split(' | ')[0]} slug={data.slug} />}
+
             {/* ─── MOBILE STICKY ─── */}
             <div className="md:hidden fixed bottom-0 left-0 right-0 z-[200] bg-white/97 backdrop-blur-[16px] border-t border-[#E8E8EE] p-3 pb-6">
                 <button
@@ -186,9 +199,9 @@ export default function LandingPageTemplate({ data }: { data: LandingPageData })
                     className="w-full flex items-center justify-center gap-2.5 bg-[#25D366] text-white text-base font-semibold py-4 rounded-full shadow-lg"
                 >
                     <WhatsAppIcon className="w-5 h-5" />
-                    Falar no WhatsApp
+                    Quero saber se tenho direito
                 </button>
-                <p className="text-center text-[11px] text-[#8A8A9A] mt-2 font-medium">Respondemos em até 2h · Todos os dias, 8h–20h</p>
+                <p className="text-center text-[11px] text-[#8A8A9A] mt-2 font-medium">Primeira avaliação gratuita · Respondemos em até 2h</p>
             </div>
 
             <main>
@@ -240,7 +253,7 @@ export default function LandingPageTemplate({ data }: { data: LandingPageData })
                                                 <CalculatorIcon className="w-5 h-5" />
                                                 Usar calculadora BPC
                                             </Link>
-                                            <span className="text-[12px] font-bold text-[#166534]">100% gratuito</span>
+                                            <span className="text-[12px] font-bold text-[#166534]">Análise online</span>
                                         </div>
                                         <button
                                             onClick={() => handleWhatsApp(data.heroSecondaryMsg || "Olá! Tenho dúvidas sobre o BPC/LOAS. Pode me orientar?")}
@@ -263,12 +276,12 @@ export default function LandingPageTemplate({ data }: { data: LandingPageData })
                         <div className="animate-fade-in hidden md:block">
                             <div className="rounded-[28px] overflow-hidden aspect-[4/5] bg-[#E8EFF8] shadow-[0_24px_64px_rgba(27,58,107,0.15)] relative">
                                 <Image src={heroImg} width={800} height={1000} className="w-full h-full object-cover object-[center_8%]" alt={lawyerName} priority />
-                                <div className="absolute bottom-5 left-4 right-4 bg-white/96 backdrop-blur-[12px] rounded-2xl p-3.5 flex items-center justify-between shadow-lg">
+                                <div className="absolute bottom-5 left-4 right-4 bg-[#1A1A2E]/80 backdrop-blur-[12px] rounded-2xl p-3.5 flex items-center justify-between shadow-2xl border border-white/10">
                                     <div>
-                                        <div className="font-playfair text-[15px] font-bold">{lawyerName}</div>
-                                        <div className="text-[11px] text-[#8A8A9A] font-medium mt-0.5">{lawyerOAB} · Direito Previdenciário</div>
+                                        <div className="font-playfair text-[15px] font-bold text-white">{lawyerName}</div>
+                                        <div className="text-[11px] text-white/70 font-medium mt-0.5">{lawyerOAB} · Direito Previdenciário</div>
                                     </div>
-                                    <div className="flex items-center gap-1.5 text-[11px] font-bold text-[#128C4E] whitespace-nowrap">
+                                    <div className="flex items-center gap-1.5 text-[11px] font-bold text-[#86EFAC] whitespace-nowrap">
                                         <div className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" /> Online
                                     </div>
                                 </div>
@@ -304,7 +317,7 @@ export default function LandingPageTemplate({ data }: { data: LandingPageData })
                             <div className="flex items-center gap-3 text-white">
                                 <CalculatorIcon className="w-6 h-6" />
                                 <div>
-                                    <div className="text-sm font-bold">Calculadora BPC Gratuita</div>
+                                    <div className="text-sm font-bold">Calculadora BPC</div>
                                     <div className="text-xs text-white/70">Descubra em 1 minuto se sua renda dá direito ao BPC/LOAS</div>
                                 </div>
                             </div>
@@ -422,11 +435,11 @@ export default function LandingPageTemplate({ data }: { data: LandingPageData })
                                 Sua renda dá direito ao BPC? <span className="text-[#86EFAC]">Descubra agora.</span>
                             </h2>
                             <p className="text-white/60 text-base mb-6 max-w-[480px] mx-auto">
-                                Use nossa calculadora gratuita baseada nos critérios do INSS para 2026. Resposta em 1 minuto.
+                                Use nossa calculadora baseada nos critérios do INSS para 2026. Resposta em 1 minuto.
                             </p>
                             <Link href="/bpc" className="inline-flex items-center gap-2 bg-white text-[#1B3A6B] text-base font-bold px-10 py-4 rounded-full hover:scale-105 transition-all shadow-xl">
                                 <CalculatorIcon className="w-5 h-5" />
-                                Acessar Calculadora Gratuita
+                                Acessar Calculadora
                             </Link>
                         </div>
                     </section>
@@ -478,7 +491,7 @@ export default function LandingPageTemplate({ data }: { data: LandingPageData })
                             {data.bpcCalculatorCTA ? (
                                 <Link href="/bpc" className="bg-[#15803D] text-white text-base font-bold px-10 py-4 rounded-full shadow-lg shadow-[#15803D]/20 hover:scale-105 active:scale-95 transition-all flex items-center gap-2">
                                     <CalculatorIcon className="w-5 h-5" />
-                                    Usar Calculadora BPC (Gratuito)
+                                    Usar Calculadora BPC
                                 </Link>
                             ) : (
                                 <button
@@ -493,6 +506,9 @@ export default function LandingPageTemplate({ data }: { data: LandingPageData })
                     </div>
                 </section>
             </main>
+
+            {/* ─── SILO NAVIGATION ─── */}
+            {data.slug && <SiloNavigation currentSlug={data.slug} />}
 
             {/* ─── FOOTER ─── */}
             <footer className="py-10 bg-white border-t border-[#E8E8EE]">

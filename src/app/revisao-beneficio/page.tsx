@@ -4,9 +4,18 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Revisão de Benefício INSS | Majoração de Aposentadoria | Advogadas Prev",
     description: "Acredita que sua aposentadoria foi calculada com erro? Entenda os prazos, teses de revisão e descubra como aumentar o valor do seu benefício.",
+    alternates: { canonical: '/revisao-beneficio' },
+    openGraph: {
+        title: "Revisão de Benefício INSS | Majoração de Aposentadoria",
+        description: "Acredita que sua aposentadoria foi calculada com erro? Entenda os prazos, teses de revisão e descubra como aumentar o valor do seu benefício.",
+        url: '/revisao-beneficio',
+        siteName: 'Advogadas Prev',
+        type: 'website',
+    },
 };
 
 const data: LandingPageData = {
+    slug: 'revisao-beneficio',
     title: "Revisão de Benefício INSS | Majoração de Aposentadoria | Advogadas Prev",
     description: "Acredita que sua aposentadoria foi calculada com erro? Entenda os prazos, teses de revisão e descubra como aumentar o valor do seu benefício.",
     heroTitle: <>Revisão e<br /><em className="text-[#1B3A6B] not-italic">Majoração</em><br />de Benefício</>,

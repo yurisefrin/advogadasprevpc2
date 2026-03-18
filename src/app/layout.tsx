@@ -15,11 +15,68 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.advogadasprev.com.br"),
   title: "Advogadas Prev | Especialistas em Direito Previdenciário",
-  description: "Escritório especializado em Direito Previdenciário. Aposentadorias, auxílio-doença, BPC/LOAS e pensão por morte.",
+  description: "Aposentadorias, BPC/LOAS, Auxílio-Doença, Pensão por Morte e Revisões do INSS. Atendimento especializado 100% online para todo o Brasil.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: "Advogadas Prev",
+    title: "Advogadas Prev | Especialistas em Direito Previdenciário",
+    description: "Aposentadorias, BPC/LOAS, Auxílio-Doença, Pensão por Morte e Revisões do INSS. Atendimento especializado 100% online para todo o Brasil.",
+    url: "/",
+    images: [{ url: "/og-image.webp", width: 1200, height: 630, alt: "Advogadas Prev - Direito Previdenciário" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Advogadas Prev | Especialistas em Direito Previdenciário",
+    description: "Aposentadorias, BPC/LOAS, Auxílio-Doença, Pensão por Morte e Revisões do INSS. Atendimento especializado 100% online para todo o Brasil.",
+  },
   icons: {
     icon: "/favicon.svg",
   },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  name: "Advogadas Prev",
+  alternateName: "Advogadas Prev - Direito Previdenciário",
+  url: "https://www.advogadasprev.com.br",
+  logo: "https://www.advogadasprev.com.br/logo.webp",
+  description: "Escritório especializado em Direito Previdenciário. Aposentadorias, BPC/LOAS, Auxílio-Doença, Pensão por Morte e Revisões do INSS.",
+  foundingDate: "2023",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "R. Santa Catarina, 481 - Centro",
+    addressLocality: "Cascavel",
+    addressRegion: "PR",
+    postalCode: "85801-040",
+    addressCountry: "BR",
+  },
+  telephone: "+5545988110440",
+  areaServed: "BR",
+  priceRange: "$$",
+  employee: [
+    {
+      "@type": "Person",
+      name: "Dra. Isabela Wrubel Cechet",
+      jobTitle: "Advogada Previdenciária",
+      description: "OAB/PR 95.762",
+    },
+    {
+      "@type": "Person",
+      name: "Dra. Juliana Grignani",
+      jobTitle: "Advogada Previdenciária",
+      description: "OAB/PR 90.817",
+    },
+  ],
+  sameAs: [
+    "https://www.instagram.com/advogadasprev",
+  ],
 };
 
 import Script from "next/script";
@@ -59,6 +116,12 @@ export default function RootLayout({
             fbq('track', 'PageView');
           `}
         </Script>
+
+        {/* Organization JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
       </head>
       <body className={`${playfair.variable} ${dmSans.variable} font-sans antialiased`}>
         <noscript>
