@@ -2,9 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   async rewrites() {
-    return [
-      { source: "/salario-maternidade", destination: "/salario-maternidade.html" },
-    ];
+    return {
+      beforeFiles: [
+        { source: "/salario-maternidade", destination: "/salario-maternidade.html" },
+      ],
+    };
   },
 };
 
